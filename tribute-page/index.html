@@ -9,17 +9,18 @@
     <style>
         body,html{
             margin:0;
+            scroll-behavior:smooth;
             padding: 0;
-            background-image: linear-gradient(rgb(129, 119, 27),rgb(113, 54, 182),rgb(129, 119, 27));
+            background-image: linear-gradient(105deg,rgb(129, 119, 27),rgb(82, 10, 163),rgb(129, 119, 27));
             background-repeat: repeat;
         }
 
         #main{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: url("bg.png");
+            font-family: 'Calibri Light';
+            background-image: url("bg.png"),url('kobe.png'),url("kobe1.png");
             background-repeat: no-repeat;
-            background-size: 50%;
-            background-position:right;
+            background-size: 30%, 40%,40%;
+            background-position:right, right top, left bottom;
             margin: 20px;
             /* display:flex;
             flex-direction: column;
@@ -28,18 +29,33 @@
         #title{
             text-shadow: 5px 5px 20px white;
             text-align: center;
-            font-size: 38px;
-            font-family: fantasy;
+            display:flex;
+            flex-direction: column;
+            font-size: 60px;
+            font-family: 'Century Gothic';
         }
-        a{
-            color:white;
+        a:link, a:visited{
+            font-family: calibri;
+            color: black;
+            border: 1px solid rgb(44, 0, 80);
+            background-color:gold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
 
+        a:hover, a:active {
+             background-color: rgb(0, 0, 0);
+                color: white;
+        }
         img{
             border: 5px solid rgb(7, 7, 4);
             border-radius: 10px;
             max-width: 100%;
             height:auto;
+            margin:10px;
 
         }
 
@@ -52,27 +68,26 @@
             align-items:center;
         }
 
-        #article1{
-            font-size: 21px;
-            width: 75%;
+        #timeline{
+            font-size: 30px;
             display:flex;
-            flex-wrap: wrap;
-           
+            flex-direction: column;
+            align-items: center;
+            color:rgb(0, 0, 0);
+            margin:100px;
         }
 
-        #article2{
-            font-size: 21px;
-            height: 75%;
-            width: 75%;
-            margin: 0;
-            padding:0;
+        #timeline h1{
+            font-family: helvetica;
+            text-shadow: 5px 5px 20px white;
         }
 
         #tribute-info{
-            margin:50px;
+            margin:100px;
             padding:50px;
             text-align:center;
-            font-size: 20px;
+            font-size: 30px;
+            display:flex;
         }
 
         #tribute-link{
@@ -82,62 +97,117 @@
         #img-caption{
             font-size: 20px;
         }
+
+        #links{
+            position:fixed;
+            display:flex;
+            top:25vh;
+            flex-direction: column;
+            justify-content: stretch;
+
+        }
+
+        #video {
+            font-size: 30px;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            margin:100px;
+            font-family: Cambria;
+            text-shadow: 5px 5px 20px white;
+        }
+
+        #footer{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Cambria;
+            bottom:100px;
+        }
+
     </style>
 </head>
 
 <body>
 
     <div id = "main">
-        <header id = "title">
+        <nav id='links'>
+            <h6>
+            <a href="#title">Home</a>
+            </h6>
+            <h6>
+                <a href="#img-div">The Last Shot</a>
+            </h6>
+            <h6>
+                <a href="#timeline">Timeline</a>
+            </h6>
+            <h6>
+                <a href="#video">Last Dance</a>
+            </h6>
+        </nav>
+        <div id = "title">
             <h1>Kobe Bean Bryant</h1>
-        </header>
+            <p>1978-2020</p>
+        </div>
+        <section id = "tribute-info">
+            <q><strong>
+                <i>I'll do whatever it takes to win games, whether it's sitting on a bench waving a towel, handing a cup of water to a teammate, or hitting the game-winning shot.</i>
+            </strong></q>
+         </section>
+
+
         <div id = "img-div">
             <img id = "kobe" src="kobe-shot.jpg" alt="Kobe">
-            <div id = "img-caption">Kobe Bryant's last field goal in the NBA</div>
+            <div id = "img-caption"><strong><i>Kobe Bryant's last field goal in the NBA</i></strong></div>
+        </div>
+        
+        <div id="timeline">
+            <h1>Path to Greatness</h1>
+            <p>
+                <strong>1996 </strong> - With the 13th pick in the 1996 NBA Draft, the Charlotte Hornets selected Kobe Bryant, the teenage phenom from Lower Merion High School in Philadelphia. He’d earned four state championships in four years, but his stint with the Hornets wouldn’t last nearly as long. They traded him to the Los Angeles Lakers for Vlade Divac. At age 17, Bryant was still considered a minor. His parents had to cosign his three-year, $3.5 million rookie contract.
+            </p>
+            <p>
+                <strong>1997 </strong> - Bryant was 18 by the time All-Star Weekend rolled around. He didn’t make the team, but he did participate in the Rookie Challenge, and he won the Slam Dunk Contest. Bryant barely made it out of the contest’s opening round. He only scored a 37, slightly higher than Ray Allen’s 35. But he clinched the title in the second round with a near-perfect score. Bryant had 49. Chris Carr had 45. Michael Finley managed 33.
+            </p>
+            <p>
+                <strong>1999 to 2002 </strong> - The Lakers had been a playoff team with Bryant and Shaquille O’Neal, but they hadn’t quite reached championship form. The furthest they’d made it was to the conference finals. That all changed when Phil Jackson arrived. Jackson had already won six league titles with the Chicago Bulls. He’d twice won three in a row. Bryant and Shaq helped him accomplish it a third time. The Lakers knocked off the Indiana Pacers in 2000, Philadelphia 76ers in 2001 and the New Jersey Nets in 2002 for the NBA crown. To this day, this was the last time a team won three straight titles.
+            </p>
+            <p>
+                <strong>2004 </strong> - Bryant and O’Neal had butted heads since they first teamed up in 1996. Shaq took issue with the style of basketball Bryant played, labeling him “selfish” and a “show off.” Bryant didn’t like the way O’Neal conditioned himself for the season and disproved of his antics when he wanted a higher salary. They held it together during their championship runs, but the cracks showed more than ever when they fell short against the Detroit Pistons in the 2004 NBA Finals. That summer, the Lakers declined to retain Jackson as head coach. O’Neal demanded a trade and was sent to the Miami Heat for Lamar Odom, Caron Butler and Brian Grant. The very next day, Bryant re-signed with the Lakers for seven years and $136 million.
+            </p>
+            <p>
+                <strong>2005 </strong> - The Lakers hired Rudy Tomjanovich to replace Jackson as head coach. He signed a five-year deal, but he wouldn’t stay in the role long. He made it through 41 games before resigning due to poor health. Frank Hamblen took over as interim in 2005, but only made it through the remaining 39 games. The Lakers missed the playoffs with a 34-48 record. Then, the Lakers turned to a familiar face: Phil Jackson. Bryant and Jackson’s second tenure ran more smoothly than the first. In December of that year, Bryant scored an astonishing 62 points in the first three quarters against the Dallas Mavericks. At the start of the final quarter, the Mavs only had 61 points. As impressive as that scoring outburst was, Bryant outdid it just a month later.
+            </p>
+            <p>
+                <strong>2006 </strong> - On Jan. 22, 2006, Bryant scored a career-high 81 points against the Toronto Raptors. It’s the second-highest points total in a single game in league history. Wilt Chamberlain set the record with 100 points in 1962. Bryant shot 26-of-46 from the field, including draining seven from beyond the arch.
+            </p>
+            <p>
+                <strong>2008 </strong> - The United States Men’s Basketball team suffered a humiliating finish in the 2004 Summer Olympics in Athens, Greece. Despite being the overwhelming favorites to win the gold medal, the squad only earned the bronze. That changed when Bryant joined the squad ahead of the 2008 Summer games in Beijing. In eight games, Bryant averaged 15 points. He erupted for 13 points in the final quarter of the gold-medal game against Spain, which the Americans won 118-107.
+            </p>
+            <p>
+                <strong>2008 to 2010 </strong> - Bryant was already a three-time champion, but he had never won one without Shaq. O’Neal had gone on to win another title in Miami. And the supporting cast Bryant had played with since O’Neal’s departure was never nearly as talented. But when the Lakers traded for Pau Gasol in February 2008, Bryant’s fortunes changed for the better. The Lakers went on to finish 57-25 and advanced all the way to the NBA Finals. In the end, the Boston Celtics won the series, 3-2. But it was the last time anyone would best Bryant in the finals. The next year, the Lakers knocked off the Orlando Magic for their 15th title, Bryant’s fourth. And in 2010, the Lakers outlasted the Celtics to win Game 7, 83-79. It was Bryant’s fifth and final championship ring.
+            </p>
+            <p>
+                <strong>2012 </strong> - Bryant donned the red, white and blue for the final time in 2012. He won his final gold medal at the 2012 Summer Olympics in London. At 33, he was an aging star. But he still saw minutes in all eight games and helped the Americans run the table again. This time, he averaged 12.1 points per contest. 
+            </p>
+            <p>
+                <strong>2016 </strong> - Bryant spent the rest of his career chasing a sixth NBA title, which would have tied him with Michael Jordan. But injuries plagued him his final few seasons. On Nov. 29, 2015, Bryant published a poem in The Players Tribune, titled “Dear Basketball.” In it, he announced that he would be retiring at the end of the season. On April 13, 2016, Bryant played in his final NBA game. But it wasn’t a declining star’s melancholy limp across the finish line. Bryant came to play. He scored a season-high 60 points in the Lakers’ 101-96 win over the Utah Jazz.
+            </p>
         </div>
 
-        <section id = "tribute-info">
-                <q><strong>
-                    <i>I'll do whatever it takes to win games, whether it's sitting on a bench waving a towel, handing a cup of water to a teammate, or hitting the game-winning shot.</i>
-                </strong></q>
-        </section>
+        <div id = 'video'>
+            <h1>The Last Dance</h1>
+            <iframe width="550" height="415" src="https://www.youtube.com/embed/Rx2inwUj_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+        </div>
+
         <div id = "tribute-link">
-            <p> <a target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">Kobe Bryant's NBA Stats</a></p>
+            <p> <a target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">More about Kobe Bryant</a></p>
             </a>
         </div>
-        <article id="article1" align="justify">
-            <h1>NBA Career</h1>
-            <p><h6>
-                Kobe Bryant, in full Kobe Bean Bryant, (born August 23, 1978, Philadelphia, Pennsylvania, U.S.—died January 26, 2020, Calabasas, California), American professional basketball player, who helped lead the Los Angeles Lakers of the National Basketball Association (NBA) to five championships (2000–02 and 2009–10). 
-                Bryant’s father, Joe (“Jelly Bean”) Bryant, was a professional basketball player who spent eight seasons in the NBA and eight more playing in Italy, where Bryant went to school. When his family returned to the United States, Bryant played basketball at Lower Merion High School in Ardmore, Pennsylvania, where he received several national Player of the Year awards and broke the southeastern Pennsylvania scoring record set by Wilt Chamberlain with 2,883 points. Bryant opted to forgo college and declared himself eligible for the NBA draft when he graduated from high school. The Charlotte Hornets chose him with the 13th pick of the 1996 draft. He was traded to the Lakers shortly thereafter and became the second youngest NBA player in history when the 1996–97 season opened. He quickly proved his merit with the Lakers and was selected for the NBA All-Star Game in just his second season, becoming the youngest All-Star.
-                Bryant was forced to share the role of the Lakers’ star player with his popular and talented teammate Shaquille O’Neal. The two had an uneasy relationship, but they found success under the leadership of Phil Jackson, who became coach of the Lakers in 1999. Bryant, a shooting guard, and O’Neal, a centre, meshed into a remarkably effective combination, and, by the time Bryant was 23, the Lakers had won three consecutive NBA championships.
-               </h6></p>
-            <p><h6>
-                After winning their third title in 2002, Bryant and the Lakers encountered difficulties. In the 2003 playoffs the Lakers were defeated in the second round. Several months later Bryant was accused of raping a young woman in Colorado. He maintained his innocence, and all charges were eventually dropped when the woman refused to testify after a monthslong campaign of harassment by fans of Bryant and some members of the media. (Bryant later apologized, admitting that he realized his accuser did not believe their sexual encounter was consensual, and a civil suit was settled in 2005.) The incident greatly tarnished his image. Led by Bryant, the Lakers returned to the finals in 2004, but they were upset by the Detroit Pistons. O’Neal subsequently was traded, and Bryant emerged as the team’s sole leader.
-                Bryant led the league in scoring during the 2005–06 and 2006–07 seasons, and in 2008 he was named the league’s MVP for the first time in his career. Bryant won his fourth NBA title in 2009, and he was named the finals MVP after averaging a stellar 32.4 points per game in the series. He led the Lakers to their third straight Western Conference championship in 2009–10, and he was once more named NBA finals MVP after the Lakers defeated the Boston Celtics in a seven-game series. The Lakers won division titles in each of the following seasons but were eliminated in the second round of each postseason. Entering the 2012–13 season, the Lakers added superstars Steve Nash and Dwight Howard to their lineup and were considered one of the preseason title favourites, but the disappointing team was barely on pace to qualify for the final Western Conference playoff spot when Bryant ruptured his Achilles tendon in April 2013, causing him to miss the rest of the season. (The Lakers were ultimately the eighth and final playoff seed that season and were swept in their first series.) He returned to the court in December 2013 but played in just six games before fracturing his kneecap and missing the remainder of that season as well. Bryant returned for the beginning of the 2014–15 season before he was again injured, tearing his rotator cuff in January 2015. He played almost all of the following season but again struggled, with a career-low .358 shooting percentage while averaging 17.6 points per game, and he retired following the last regular-season game of the 2015–16 season.
-                In addition to his professional accomplishments, he was a member of the gold medal-winning U.S. men’s basketball teams at the 2008 Beijing Olympic Games and the 2012 London Olympic Games. In 2015 Bryant wrote the poem “Dear Basketball,” and two years later it served as the basis for a short film of the same name, which he also narrated. The work won an Academy Award for best animated short film. In 2018 Bryant published the book The Mamba Mentality: How I Play, in which he described his approach to basketball; the title reflected a nickname he bestowed upon himself during his playing days, “The Black Mamba.” On January 26, 2020, Bryant and his 13-year-old daughter were among a group traveling to a girls basketball game in a helicopter when it crashed, killing all nine people aboard. He was elected into the Naismith Memorial Basketball Hall of Fame later that year.
-            </h6></p>
-        </article>
-        <article id="article2" align="justify">
-            <h1>Death</h1>
-            <p><h6>
-                Bryant, his daughter Gianna and six others perished in a January 26, 2020, helicopter crash, leaving a permanent hole in the basketball world. RACHEL CHANGJAN 22, 2021 Photo: Allen Berezovsky/Getty Images The helicopter may have crashed into a hillside in Calabasas, California, on Sunday, January 26, 2020, but it was immediately felt around the world. The headline accompanying it was completely surreal: Basketball great Kobe Bryant was dead at the age of 41. The way Bryant mastered the sport, it seems as if he was invincible. He was a five-time NBA champion, 18-time All-Star, two-time NBA finals MVP — and two-time Olympic gold medalist to boot. And unlike players who zig-zagged around through teams, for all 20 seasons he played, he remained a Los Angeles Laker. In 2006, he scored 81 points in a single game — the second-highest in NBA history. Even though he retired from the sport in 2016, scoring an impressive 60 points in his final game, he found his way in other realms, most notably winning an Oscar in 2018 for his animated short Dear Basketball. Despite all that greatness, what made Bryant most human was his love for his family — his wife Vanessa, who he married in 2001, and their four daughters, Natalia, Gianna, Bianka and Capri. And ultimately, it was for the love of basketball and his daughter Gianna that he met his untimely end that Sunday morning on his way to the second day of his daughter’s basketball tournament.
-                As the news spread, the disbelief and tributes poured out. Among the words of sympathy was a tweet from Barack Obama: “Kobe was a legend on the court and just getting started in what would have been just as meaningful a second act. To lose Gianna is even more heartbreaking to us as parents. Michelle and I send love and prayers to Vanessa and the entire Bryant family on an unthinkable day.”
 
-            </h6></p>
-            <p><h6>
-                
-                On what would have been his 42nd birthday in August, his widow Vanessa posted on Instagram: “I love you and miss you more than I can ever explain. I wish you and Gigi were here to celebrate YOU! I wish I could make you your fav food or a birthday cake with my Gigi. I miss your big hugs, your kisses, your smile, your loud ass deep laugh… Our lives feel so empty without you and Gigi. I’ve been completely broken inside.”
-                But his legacy will forever live on with the Lakers, as James — one of the last people he talked to — showed in an Instagram tribute in December 2020 after the team won the season. With a photo of Bryant looking over him, he wrote, “What I felt last night when I grabbed that ring from the case. Love and miss you my brother!!!! #Mamba4Life.”
-
-            </h6></p>
-
-        </article>
-        <div>
-            <iframe width="600" height="515" src="https://www.youtube.com/embed/Rx2inwUj_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
-        </div>
-
-
+        <footer id = 'footer'>
+            Created by Kimcarl Cacas
+        </footer>
     </div>
 
 
