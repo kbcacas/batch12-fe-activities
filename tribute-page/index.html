@@ -8,75 +8,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,700&family=Staatliches&family=Tillana&family=Vast+Shadow&display=swap" rel="stylesheet">
-
     
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,700&family=Staatliches&family=Tillana&family=Vast+Shadow&display=swap');
         body,html{
             margin:0;
             scroll-behavior:smooth;
             padding: 0;
-            background-image: linear-gradient(105deg,rgb(129, 119, 27),rgb(82, 10, 163),rgb(129, 119, 27));
+            background-image: linear-gradient(130deg,rgb(129, 119, 27),rgb(82, 10, 163),rgb(129, 119, 27));
             background-repeat: repeat;
         }
 
         #main{
             font-family: ''Calibri Light'';
-            background-image: url("bg.png"),url('kobe.png'),url("kobe1.png");
+            background-image: url("kobe1.png");
+            background-position-y:100px;
+            background-position-x: 900px;
             background-repeat: no-repeat;
-            background-size: 30%, 40%,40%;
-            background-position:right, right top, left bottom;
-            margin: 20px;
-            /* display:flex;
-            flex-direction: column;
-            align-items: center; */
+            background-size: 45%;
+            margin:0;
+            background-attachment: fixed;
         }
 
 
         #title{
             text-shadow: 5px 5px 20px white;
             text-align: center;
+            padding-top:80px;
             display:flex;
             flex-direction: column;
             font-size: 120px;
             font-family: 'Staatliches';
+            transition:0.5s;
         }
+
+        #title:hover{
+            letter-spacing: 0.2rem;
+        }
+
         #title p{
             margin:0;
             font-size:60%;
         }
-        a:link, a:visited{
-            color: black;
-            border: 1px solid rgb(44, 0, 80);
-            background-color:gold;
-            padding: 5px 10px;
-            border-radius: 20px;
-            text-align: center;
-            display: inline-flex;
-        }
-
-        a:hover, a:active {
-             background-color: rgb(0, 0, 0);
-                letter-spacing: 0.1rem;
-                color: white;
-        }
         img{
-            border: 5px solid rgb(7, 7, 4);
-            border-radius: 10px;
+            border-radius: 15px;
+            display:block;
             max-width: 100%;
             height:auto;
-            margin:10px;
-
         }
 
         #img-div{
-            text-align: center;
-            font-size: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            width:60%;
+            padding-top:55px;
         }
 
         #timeline{
@@ -84,59 +70,99 @@
             display:flex;
             flex-direction: column;
             align-items: center;
-            color:rgb(0, 0, 0);
-            margin:140px;
+            color:lightgray;
+            margin:200px;
+            max-width: 800px;
 
         }
 
         #timeline h1{
             font-family: 'Vast Shadow';
+            color:black;
             text-shadow: 5px 5px 20px white;
         }
 
         #timeline p{
-            font-size: 21px;
+            font-size: 19px;
             font-family:'Roboto';
         }
 
         #tribute-info{
-            margin-bottom:400px;
             text-align:center;
-            font-size: 30px;
             display:flex;
             flex-direction: column;
             align-items: center;
+            margin-left: 200px;
+            max-width:800px;
         }
         #tribute-info q{
             margin:120px;
-            text-shadow: 5px 5px 40px white;
-            font-family: 'Tillana';
+            font-size:40px;
+            text-shadow: 5px 5px 15px white;
+            font-family: 'Roboto';
+            transition:0.5s;
+        }
+
+        #tribute-info q:hover{
+            letter-spacing: 0.025rem;
         }
 
         #tribute-link{
             text-align: center;
             display:flex;
-            flex-wrap:nowrap;
             justify-content: center;
+            text-decoration: none;
+            font-family:'Roboto';
+            font-size: 50px;
+            width:75%;
+            padding-top: 100px;
         }
 
         #img-caption{
-            font-size: 20px;
-            text-shadow: 5px 5px 20px white;
+            position: relative; 
+            font-family:'Roboto';
+            display:block;
+            bottom: 100px; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            max-width:800px;
+            transition: .5s ease;
+            opacity:0;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 25px;
+            text-align: center;
         }
 
-        #links{
-            display:flex;
-            position:fixed;
-            top:25vh;
-            flex-direction: column;
-            font-size: 20px;
+        #img-div:hover #img-caption{
+            opacity:1;
         }
 
         #links a{
-            flex-direction: column;
-            flex-wrap: wrap;
             font-family: 'Roboto';
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            transition:0.5s;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #links a:hover{
+            background: rgb(255, 230, 86);
+            color: black;
+        }
+
+        #links{
+            overflow: hidden;
+            background-color: rgb(33, 4, 36);
+            position: fixed;
+            top:-25px;
+            width: 100%;
         }
 
         #video {
@@ -145,6 +171,7 @@
             flex-direction: column;
             align-items: center;
             margin:100px;
+            padding-top: 50px;
             font-family: 'Vast Shadow';
             text-shadow: 5px 5px 20px white;
         }
@@ -154,8 +181,16 @@
             flex-direction: column;
             align-items: center;
             font-family: 'Roboto';
-            bottom:100px;
+            padding-top:200px;
 
+        }
+
+        #stats{
+            background-color: rgb(247, 239, 208);
+            opacity: 100%;
+            font-family:'Roboto';
+            align-items:center;
+            margin: 100px;
         }
 
     </style>
@@ -166,16 +201,16 @@
     <div id = "main">
         <nav id='links'>
             <h6>
-            <a href="#main">Home</a>
+            <a href="#main" id = 'home'>Home</a>
             </h6>
             <h6>
-                <a href="#img-div">The Last Shot</a>
+                <a href="#img-div" id= 'last-shot'>The Last Shot</a>
             </h6>
             <h6>
-                <a href="#timeline">Timeline</a>
+                <a href="#timeline" id = 'navtimeline'>Timeline</a>
             </h6>
             <h6>
-                <a href="#video">Last Dance</a>
+                <a href="#video" id = 'last-dance'>Last Dance</a>
             </h6>
         </nav>
         <h1 id = "title">
@@ -183,53 +218,55 @@
             <p>1978-2020</p>
         </h1>
         <section id = "tribute-info">
-            <q><strong>
-                <i>I'll do whatever it takes to win games, whether it's sitting on a bench waving a towel, handing a cup of water to a teammate, or hitting the game-winning shot.</i>
-            </strong></q>
+            <q>
+                <i>
+                    Everything negative - pressure, challenges - is all an opportunity for me to rise.
+                </i>
+            </q>
          </section>
 
 
         <div id = "img-div">
             <img id = "image" src="kobe-shot.jpg" alt="Kobe">
-            <figcaption id = "img-caption"><strong><i>Kobe Bryant's last field goal in the NBA</i></strong></div>
-            </figcaption>
+            <div id = "img-caption"><strong><i>Kobe Bryant's last field goal in the NBA</i></strong></div>
+        </div>
         
         <div id="timeline">
             <h1>Path to Greatness</h1>
-            <p>
+            <p align = 'justify'>
                 <strong>1996 </strong> - With the 13th pick in the 1996 NBA Draft, the Charlotte Hornets selected Kobe Bryant, the teenage phenom from Lower Merion High School in Philadelphia. He’d earned four state championships in four years, but his stint with the Hornets wouldn’t last nearly as long. They traded him to the Los Angeles Lakers for Vlade Divac. At age 17, Bryant was still considered a minor. His parents had to cosign his three-year, $3.5 million rookie contract.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>1997 </strong> - Bryant was 18 by the time All-Star Weekend rolled around. He didn’t make the team, but he did participate in the Rookie Challenge, and he won the Slam Dunk Contest. Bryant barely made it out of the contest’s opening round. He only scored a 37, slightly higher than Ray Allen’s 35. But he clinched the title in the second round with a near-perfect score. Bryant had 49. Chris Carr had 45. Michael Finley managed 33.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>1999 to 2002 </strong> - The Lakers had been a playoff team with Bryant and Shaquille O’Neal, but they hadn’t quite reached championship form. The furthest they’d made it was to the conference finals. That all changed when Phil Jackson arrived. Jackson had already won six league titles with the Chicago Bulls. He’d twice won three in a row. Bryant and Shaq helped him accomplish it a third time. The Lakers knocked off the Indiana Pacers in 2000, Philadelphia 76ers in 2001 and the New Jersey Nets in 2002 for the NBA crown. To this day, this was the last time a team won three straight titles.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2004 </strong> - Bryant and O’Neal had butted heads since they first teamed up in 1996. Shaq took issue with the style of basketball Bryant played, labeling him “selfish” and a “show off.” Bryant didn’t like the way O’Neal conditioned himself for the season and disproved of his antics when he wanted a higher salary. They held it together during their championship runs, but the cracks showed more than ever when they fell short against the Detroit Pistons in the 2004 NBA Finals. That summer, the Lakers declined to retain Jackson as head coach. O’Neal demanded a trade and was sent to the Miami Heat for Lamar Odom, Caron Butler and Brian Grant. The very next day, Bryant re-signed with the Lakers for seven years and $136 million.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2005 </strong> - The Lakers hired Rudy Tomjanovich to replace Jackson as head coach. He signed a five-year deal, but he wouldn’t stay in the role long. He made it through 41 games before resigning due to poor health. Frank Hamblen took over as interim in 2005, but only made it through the remaining 39 games. The Lakers missed the playoffs with a 34-48 record. Then, the Lakers turned to a familiar face: Phil Jackson. Bryant and Jackson’s second tenure ran more smoothly than the first. In December of that year, Bryant scored an astonishing 62 points in the first three quarters against the Dallas Mavericks. At the start of the final quarter, the Mavs only had 61 points. As impressive as that scoring outburst was, Bryant outdid it just a month later.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2006 </strong> - On Jan. 22, 2006, Bryant scored a career-high 81 points against the Toronto Raptors. It’s the second-highest points total in a single game in league history. Wilt Chamberlain set the record with 100 points in 1962. Bryant shot 26-of-46 from the field, including draining seven from beyond the arch.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2008 </strong> - The United States Men’s Basketball team suffered a humiliating finish in the 2004 Summer Olympics in Athens, Greece. Despite being the overwhelming favorites to win the gold medal, the squad only earned the bronze. That changed when Bryant joined the squad ahead of the 2008 Summer games in Beijing. In eight games, Bryant averaged 15 points. He erupted for 13 points in the final quarter of the gold-medal game against Spain, which the Americans won 118-107.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2008 to 2010 </strong> - Bryant was already a three-time champion, but he had never won one without Shaq. O’Neal had gone on to win another title in Miami. And the supporting cast Bryant had played with since O’Neal’s departure was never nearly as talented. But when the Lakers traded for Pau Gasol in February 2008, Bryant’s fortunes changed for the better. The Lakers went on to finish 57-25 and advanced all the way to the NBA Finals. In the end, the Boston Celtics won the series, 3-2. But it was the last time anyone would best Bryant in the finals. The next year, the Lakers knocked off the Orlando Magic for their 15th title, Bryant’s fourth. And in 2010, the Lakers outlasted the Celtics to win Game 7, 83-79. It was Bryant’s fifth and final championship ring.
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2012 </strong> - Bryant donned the red, white and blue for the final time in 2012. He won his final gold medal at the 2012 Summer Olympics in London. At 33, he was an aging star. But he still saw minutes in all eight games and helped the Americans run the table again. This time, he averaged 12.1 points per contest. 
             </p>
-            <p>
+            <p align = 'justify'>
                 <strong>2016 </strong> - Bryant spent the rest of his career chasing a sixth NBA title, which would have tied him with Michael Jordan. But injuries plagued him his final few seasons. On Nov. 29, 2015, Bryant published a poem in The Players Tribune, titled “Dear Basketball.” In it, he announced that he would be retiring at the end of the season. On April 13, 2016, Bryant played in his final NBA game. But it wasn’t a declining star’s melancholy limp across the finish line. Bryant came to play. He scored a season-high 60 points in the Lakers’ 101-96 win over the Utah Jazz.
             </p>
         </div>
-        <div id = "tribute-link">
-            <p> <a target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">More about Kobe Bryant</a></p>
-            </a>
+
+        <div id = 'stats'>
+            <script src="https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fplayers%2Fb%2Fbryanko01.html&div=div_totals"></script>
         </div>
 
         <div id = 'video'>
@@ -237,10 +274,16 @@
             <iframe width="550" height="415" src="https://www.youtube.com/embed/Rx2inwUj_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
         </div>
 
+        <div id = "tribute-link">
+            <p> <i><strong></strong>To see Kobe Bryant's full NBA Stats, click <a id = 'kobestats-link' target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">here.</a></i></p>
+            </a>
+        </div>
 
         <footer id = 'footer'>
             Created by Kimcarl Cacas
         </footer>
+
+
     </div>
 
 
