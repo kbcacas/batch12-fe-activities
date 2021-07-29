@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tribute Page</title>
+    <title>Kobe Bryant Tribute Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,700&family=Staatliches&family=Tillana&family=Vast+Shadow&display=swap" rel="stylesheet">
+
+    
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,700&family=Staatliches&family=Tillana&family=Vast+Shadow&display=swap');
         body,html{
             margin:0;
             scroll-behavior:smooth;
@@ -16,7 +22,7 @@
         }
 
         #main{
-            font-family: 'Calibri Light';
+            font-family: ''Calibri Light'';
             background-image: url("bg.png"),url('kobe.png'),url("kobe1.png");
             background-repeat: no-repeat;
             background-size: 30%, 40%,40%;
@@ -26,28 +32,33 @@
             flex-direction: column;
             align-items: center; */
         }
+
+
         #title{
             text-shadow: 5px 5px 20px white;
             text-align: center;
             display:flex;
             flex-direction: column;
-            font-size: 60px;
-            font-family: 'Century Gothic';
+            font-size: 120px;
+            font-family: 'Staatliches';
+        }
+        #title p{
+            margin:0;
+            font-size:60%;
         }
         a:link, a:visited{
-            font-family: calibri;
             color: black;
             border: 1px solid rgb(44, 0, 80);
             background-color:gold;
             padding: 5px 10px;
             border-radius: 20px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
         }
 
         a:hover, a:active {
              background-color: rgb(0, 0, 0);
+                letter-spacing: 0.1rem;
                 color: white;
         }
         img{
@@ -62,10 +73,10 @@
         #img-div{
             text-align: center;
             font-size: 15px;
-            width: auto;
             display: flex;
             flex-direction: column;
-            align-items:center;
+            align-items: center;
+
         }
 
         #timeline{
@@ -74,37 +85,58 @@
             flex-direction: column;
             align-items: center;
             color:rgb(0, 0, 0);
-            margin:100px;
+            margin:140px;
+
         }
 
         #timeline h1{
-            font-family: helvetica;
+            font-family: 'Vast Shadow';
             text-shadow: 5px 5px 20px white;
         }
 
+        #timeline p{
+            font-size: 21px;
+            font-family:'Roboto';
+        }
+
         #tribute-info{
-            margin:100px;
-            padding:50px;
+            margin-bottom:400px;
             text-align:center;
             font-size: 30px;
             display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #tribute-info q{
+            margin:120px;
+            text-shadow: 5px 5px 40px white;
+            font-family: 'Tillana';
         }
 
         #tribute-link{
             text-align: center;
+            display:flex;
+            flex-wrap:nowrap;
+            justify-content: center;
         }
 
         #img-caption{
             font-size: 20px;
+            text-shadow: 5px 5px 20px white;
         }
 
         #links{
-            position:fixed;
             display:flex;
+            position:fixed;
             top:25vh;
             flex-direction: column;
-            justify-content: stretch;
+            font-size: 20px;
+        }
 
+        #links a{
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-family: 'Roboto';
         }
 
         #video {
@@ -113,7 +145,7 @@
             flex-direction: column;
             align-items: center;
             margin:100px;
-            font-family: Cambria;
+            font-family: 'Vast Shadow';
             text-shadow: 5px 5px 20px white;
         }
 
@@ -121,8 +153,9 @@
             display:flex;
             flex-direction: column;
             align-items: center;
-            font-family: Cambria;
+            font-family: 'Roboto';
             bottom:100px;
+
         }
 
     </style>
@@ -133,7 +166,7 @@
     <div id = "main">
         <nav id='links'>
             <h6>
-            <a href="#title">Home</a>
+            <a href="#main">Home</a>
             </h6>
             <h6>
                 <a href="#img-div">The Last Shot</a>
@@ -145,10 +178,10 @@
                 <a href="#video">Last Dance</a>
             </h6>
         </nav>
-        <div id = "title">
-            <h1>Kobe Bean Bryant</h1>
+        <h1 id = "title">
+            Kobe Bean Bryant
             <p>1978-2020</p>
-        </div>
+        </h1>
         <section id = "tribute-info">
             <q><strong>
                 <i>I'll do whatever it takes to win games, whether it's sitting on a bench waving a towel, handing a cup of water to a teammate, or hitting the game-winning shot.</i>
@@ -157,9 +190,9 @@
 
 
         <div id = "img-div">
-            <img id = "kobe" src="kobe-shot.jpg" alt="Kobe">
-            <div id = "img-caption"><strong><i>Kobe Bryant's last field goal in the NBA</i></strong></div>
-        </div>
+            <img id = "image" src="kobe-shot.jpg" alt="Kobe">
+            <figcaption id = "img-caption"><strong><i>Kobe Bryant's last field goal in the NBA</i></strong></div>
+            </figcaption>
         
         <div id="timeline">
             <h1>Path to Greatness</h1>
@@ -194,16 +227,16 @@
                 <strong>2016 </strong> - Bryant spent the rest of his career chasing a sixth NBA title, which would have tied him with Michael Jordan. But injuries plagued him his final few seasons. On Nov. 29, 2015, Bryant published a poem in The Players Tribune, titled “Dear Basketball.” In it, he announced that he would be retiring at the end of the season. On April 13, 2016, Bryant played in his final NBA game. But it wasn’t a declining star’s melancholy limp across the finish line. Bryant came to play. He scored a season-high 60 points in the Lakers’ 101-96 win over the Utah Jazz.
             </p>
         </div>
+        <div id = "tribute-link">
+            <p> <a target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">More about Kobe Bryant</a></p>
+            </a>
+        </div>
 
         <div id = 'video'>
             <h1>The Last Dance</h1>
             <iframe width="550" height="415" src="https://www.youtube.com/embed/Rx2inwUj_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
         </div>
 
-        <div id = "tribute-link">
-            <p> <a target = "_blank" href="https://www.basketball-reference.com/players/b/bryanko01.html">More about Kobe Bryant</a></p>
-            </a>
-        </div>
 
         <footer id = 'footer'>
             Created by Kimcarl Cacas
