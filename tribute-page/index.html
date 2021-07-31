@@ -18,14 +18,17 @@
             margin:0;
             scroll-behavior:smooth;
             padding: 0;
-            background: linear-gradient(to left, #F7D25Baa 50%, #542482aa 50%);
-            background-repeat: repeat;
+            background-image: linear-gradient(to left, #F7D25Baa 50%, #542482aa 50%);
+            background-repeat: no-repeat;
+            background-size:contain;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         #main{
             font-family: ''Calibri Light'';
             background-image: url("kobe1.png"),url('kobe85.png');
-            background-position-y:60px,bottom;
+            background-position-y:50px,bottom;
             background-position-x: 110%,100px;
             background-repeat:no-repeat;
             background-size: 50%,30%;
@@ -41,7 +44,7 @@
             margin-bottom:20px;
             display: flex;
             flex-flow:column;
-            font-size: 160px;
+            font-size: 10vw;
             font-family: 'Staatliches';
             transition:0.4s;
         }
@@ -126,7 +129,7 @@
         #tribute-info q{
             margin:10px;
             padding:0;
-            font-size:25px;
+            font-size: 2vw;
             text-shadow: 5px 5px 10px rgb(160, 131, 0);
             font-family: 'Montserrat';
             transition:0.5s;
