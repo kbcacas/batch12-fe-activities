@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div>
+        <div class = 'parallax'>
+            <div id = 'heading'>
+                <h1 id = 'title'> Your feedback matters.</h1>
+                <p id = 'description'>
+                Please spare a few moments to complete the Guest Satisfaction Form below which will help us improve our service.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <main class = 'container-main'>
+        <div class = 'whole-form'>
+            <h1 id = 'survey-title'> Guest Satisfaction Form</h1>
+            <form action="./success.html" autocomplete="off" class ='form-survey' id = 'survey-form'>
+                <div id = 'msg-invalid'>All fields are required.</div>
+                <div id = 'success-msg'>Thank you for filling up the form.</div>
+
+                <section class = 'personal-info'>
+                    <div class = 'primary-info'>
+                        <label for="branch" id = 'branch-label'>Hotel Branch</label>
+                        <select name = 'branch' id='dropdown' required>
+                            <option value disabled="disabled" selected=""></option>
+                            <option value="manila">MANILA</option>
+                            <option value="clark">CLARK</option>
+                            <option value="cebu">CEBU CITY</option>
+                        </select>
+
+                        <label for="name" autocapitalize="words" id = 'name-label'>Full Name</label>
+                        <input type="text" name = 'name' id ='name' placeholder="e.g. Kimcarl Cacas" required>
+                        <label for="email" id = 'email-label'>E-mail Address</label>
+                        <input type ='email' id = 'email' email = 'email' placeholder="e.g. kbcacas@gmail.com" required>
+                        <label for="number" id = 'number-label' >Phone Number</label>
+                        <input type="text" number = 'number' id = 'number' placeholder="11-digit phone number" pattern="[0]+\d{10}$" required>
+                    </div>
+
+                    <div class= 'secondary-info'>
+                            <div class = 'sex-btn'>
+                                <p>Sex</p>
+                                <input type="radio" name = 'sex' value='male' id='sex-male'required>
+                                <label for="sex-male" id = 'male'>Male</label>
+                                <input type="radio" name = 'sex' value='female' id='sex-female'>
+                                <label for="sex-female" id = 'male'>Female</label>
+                            </div>
+
+                            <div class = 'birthday'>
+                                <p>Birthday</p>
+                                <input type="date" required>
+                            </div>
+                            
+                            <div class='checkboxes'>
+                                <p>How did you learn about our hotel</p>
+                                <input type="checkbox" id = 'socmed' value = 'Social Media'>
+                                <label for="socmed">Social Media</label>
+                                <input type="checkbox" id = 'ads' value = 'Ads'>
+                                <label for="ads">Advertisement</label>
+                                <input type="checkbox" id = 'travelagent' value = 'Travel Agent'>
+                                <label for="travelagent">Travel Agent</label>
+                                <input type="checkbox" id = 'friend' value = 'Friend'>
+                                <label for="friend">Friend</label>
+                            </div>
+
+                    </div>
+                </section>
+
+                <section class = 'survey-section'>
+                    <div class = 'category'>
+                        <h1>Reception</h1>
+
+                        <div class = 'item'>
+                            <div class = 'label'></div>
+                            <div class = 'value'>
+                                <h6>5</h6>
+                                <h6>4</h6>
+                                <h6>3</h6>
+                                <h6>2</h6>
+                                <h6>1</h6>
+                            </div>
+                        </div>
+                        
+                        <div class = 'item'>
+                        <div class = 'label'>Friendliness</div>
+                        <div class = 'value'>
+                            <input type="radio" name="question_1" value="5" required>
+                            <input type="radio" name="question_1" value="4" >
+                            <input type="radio" name="question_1" value="3" >
+                            <input type="radio" name="question_1" value="2" >
+                            <input type="radio" name="question_1" value="1" >
+                        </div>
+                        </div>
+
+                        <div class = 'item'>
+                        <div class = 'label'>Service</div>
+                        <div class = 'value'>
+                            <input type="radio" name="question_2" value="5" required>
+                            <input type="radio" name="question_2" value="4" >
+                            <input type="radio" name="question_2" value="3" >
+                            <input type="radio" name="question_2" value="2" >
+                            <input type="radio" name="question_2" value="1" >
+                        </div>
+                        </div>
+
+                        <div class='item'>
+                            <div class = 'label'>Efficiency</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_3" value="5" required>
+                            <input type="radio" name="question_3" value="4" >
+                            <input type="radio" name="question_3" value="3" >
+                            <input type="radio" name="question_3" value="2" >
+                            <input type="radio" name="question_3" value="1" >
+                        </div>
+                        </div>
+
+                    </div>
+
+                    <div class = 'category'>
+                        <h1>Rooms</h1>
+                        <div class = 'item'>
+                            <div class = 'item'>
+                                <div class = 'label'></div>
+                                    <div class = 'value'>
+                                        <h6>5</h6>
+                                        <h6>4</h6>
+                                        <h6>3</h6>
+                                        <h6>2</h6>
+                                        <h6>1</h6>
+                                    </div>
+                            </div>
+                        </div>
+                        
+                        <div class = 'item'>
+                            <div class = 'label'>Amenities</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_4" value="5" required>
+                            <input type="radio" name="question_4" value="4" >
+                            <input type="radio" name="question_4" value="3" >
+                            <input type="radio" name="question_4" value="2" >
+                            <input type="radio" name="question_4" value="1" >
+                            </div>
+                        </div>
+
+                        <div class = 'item'>
+                            <div class = 'label'>Comfort</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_5" value="5" required>
+                            <input type="radio" name="question_5" value="4" >
+                            <input type="radio" name="question_5" value="3" >
+                            <input type="radio" name="question_5" value="2" >
+                            <input type="radio" name="question_5" value="1" >
+                        </div>
+                        </div>
+
+                        <div class = 'item'>
+                            <div class = 'label'>Cleanliness</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_6" value="5" required>
+                            <input type="radio" name="question_6" value="4" >
+                            <input type="radio" name="question_6" value="3" >
+                            <input type="radio" name="question_6" value="2" >
+                            <input type="radio" name="question_6" value="1" >
+                        </div>
+                        </div>
+                    </div>
+                        
+                    <div class = 'category'>
+                        <h1>Food</h1>
+                        <div class = 'item'>
+                            <div class = 'label'></div>
+                            <div class = 'value'>
+                                <h6>5</h6>
+                                <h6>4</h6>
+                                <h6>3</h6>
+                                <h6>2</h6>
+                                <h6>1</h6>
+                            </div>
+                        </div>
+
+
+                        <div class  = 'item'>
+                            <div class = 'label'>Taste</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_7" value="5" required>
+                            <input type="radio" name="question_7" value="4" >
+                            <input type="radio" name="question_7" value="3" >
+                            <input type="radio" name="question_7" value="2" >
+                            <input type="radio" name="question_7" value="1" >
+                        </div>
+                        </div>
+
+                        <div class = 'item'>
+                            <div class = 'label'>Service</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_8" value="5" required>
+                            <input type="radio" name="question_8" value="4" >
+                            <input type="radio" name="question_8" value="3" >
+                            <input type="radio" name="question_8" value="2" >
+                            <input type="radio" name="question_8" value="1" >
+                        </div>
+                        </div>
+
+                        <div class = 'item'>
+                            <div class = 'label'>Price</div>
+                            <div class = 'value'>
+                            <input type="radio" name="question_9" value="5" required>
+                            <input type="radio" name="question_9" value="4" >
+                            <input type="radio" name="question_9" value="3" >
+                            <input type="radio" name="question_9" value="2" >
+                            <input type="radio" name="question_9" value="1" >
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class = 'comments'>
+                        <h6>Comments/Suggestion</h6>
+                        <div><textarea name="feedback" id="feedback" cols="80" rows="2"></textarea></div>
+                    </div>
+
+                    <div class = 'submit'>
+                        <div class = 'submit-effect'>
+                            <input type="submit" name="button" value="Submit" id="submit">
+                        </div>
+                    </div>
+                </section>
+            </form>
+         </div>
+    </main>
+
+
+
+</body>
+</html>
