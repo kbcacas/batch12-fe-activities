@@ -40,35 +40,51 @@ clip-path: ellipse(100% 55% at 48% 44%);
 
 .container-main{
     border: 10px solid black;
+    display:flex;
+    justify-content: center;
 }
 
 .whole-form{
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
-    align-items: center;
+    align-content: stretch;
+    border: 5px solid blue;
+}
+#survey-title{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-survey{
+    display: flex;
+    flex-direction: column;
+    max-width:100%;
 }
 
 .personal-info{
 display: flex;
 flex-direction: row;
-flex-wrap: nowrap;
+flex-wrap: wrap;
+justify-content: space-around;
+max-width: 100%;
 }
 
 .primary-info{
     display:flex;
     flex-direction: column;
-    width:50%;
+    width:30%;
 }
 
 .secondary-info{
     display:flex;
     flex-direction: column;
     width:50%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .survey-section{
+    padding-top:15px;
     display: flex;
     flex-direction: column;
     flex-wrap:wrap;
@@ -78,7 +94,15 @@ flex-wrap: nowrap;
 .category{
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
 }
+.category h1{
+    
+    display: flex;
+    width:50%;
+    justify-content: space-around;
+}
+
 .item{
 width:100%;
 display: flex;
@@ -86,6 +110,7 @@ justify-content: flex-start;
 align-items: center;
 margin:0;
 }
+
 .label{
     display: flex;
     flex-direction: column;
