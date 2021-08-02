@@ -8,40 +8,47 @@
 }
 body,html{
     scroll-behavior: smooth;
+    background:url('hotelbg.jpg');
+    background-attachment: fixed;
+    background-size:cover;
 }
 
 .parallax{
-background:url('bg.jpg'),rgba(0, 0, 0, 0.75);
+background:url('bg.jpg'),#0a1931d8;
 background-repeat: no-repeat;
 background-size:cover;
 background-attachment: fixed;
 background-blend-mode: overlay;
 max-width:100%;
-height: 60rem;
+height: 60em;
 clip-path: ellipse(100% 55% at 48% 44%);
 }
 
 #heading{
     display:flex;
-    padding-top:200px;
+    padding-top:300px;
+    padding-left:20px;
     flex-direction: column;
     align-items: flex-start;
 }
 
 #title{
-    font-size:10vw;
-    color:rgb(143, 106, 58);
+    font-size:7vw;
+    color:#FFC947;
+    font-family:'Mukta';
 }
 
 #description{
-    font-size:1.5vw;
+    font-size:1.3vw;
+    padding-left:20px;
     color: burlywood;
+    font-family: 'Roboto';
 }
 
 .container-main{
-    border: 10px solid black;
     display:flex;
     justify-content: center;
+    padding-top:100px;
 }
 
 .whole-form{
@@ -49,17 +56,28 @@ clip-path: ellipse(100% 55% at 48% 44%);
     flex-direction: column;
     flex-wrap:wrap;
     align-content: stretch;
-    border: 5px solid blue;
+    padding:20px;
+    border-radius:10px;
+    background-color:#0a1931;
 }
 #survey-title{
     display:flex;
     flex-direction: row;
     justify-content: center;
+    font-family:'Corben';
+    letter-spacing: 2px;
+    border-radius:20px;
+    background-color:#FFC947;
+
 }
 .form-survey{
     display: flex;
     flex-direction: column;
     max-width:100%;
+    padding-top:20px;
+    color:#EFEFEF;
+    background-color:#185ADB;
+    border-radius: 20px;
 }
 
 .personal-info{
@@ -68,12 +86,21 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-around;
 max-width: 100%;
+font-family:'Montserrat';
+padding-bottom: 20px;
 }
 
 .primary-info{
     display:flex;
     flex-direction: column;
     width:30%;
+    font-size:'Montserrat';
+}
+
+
+.primary-info label{
+    padding-top:8px;
+    padding-bottom:8px;
 }
 
 .secondary-info{
@@ -83,24 +110,44 @@ max-width: 100%;
     align-items: flex-start;
 }
 
+.secondary-info p{
+    padding: 8px 0 8px 0;
+}
+.sex-btn label{
+    font-size:0.8vw;
+}
+
+.checkboxes label{
+    font-size:0.8vw;
+}
+
+.checkboxes p{
+    padding-bottom: 5px;
+}
+
+
+
 .survey-section{
     padding-top:15px;
     display: flex;
     flex-direction: column;
     flex-wrap:wrap;
     justify-content: center;
+    
 }
 
 .category{
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
+    
 }
 .category h1{
     
     display: flex;
     width:50%;
     justify-content: space-around;
+    font-family: 'Montserrat';
 }
 
 .item{
@@ -109,6 +156,7 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 margin:0;
+font-family: 'Roboto';
 }
 
 .label{
@@ -124,8 +172,54 @@ margin:0;
     align-items: center;
     justify-content: space-evenly;
     width:50%;
-
 }
+
+.comments{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family:'Montserrat';
+    font-size:1.5vw;
+}
+.submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+input[type='text']{
+    border:0;
+    background:none;
+    border-bottom:2px solid white;
+}
+
+input[type='text']:focus{
+    outline:none !important;
+}
+
+::placeholder{
+    color:white;
+    opacity:0.6;
+}
+
+#dropdown{
+    border-radius:20px;
+    background:none;
+    color:white;
+}
+
+#email{
+    border:0;
+    background:none;
+    color:white;
+    border-bottom:2px solid white;
+}
+
+#email:focus{
+    outline:none !important;
+}
+
 
 
 

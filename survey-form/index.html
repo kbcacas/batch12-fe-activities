@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Corben&family=Montserrat:wght@500&family=Mukta:wght@500&family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -26,8 +30,8 @@
         <div class = 'whole-form'>
             <h1 id = 'survey-title'> Guest Satisfaction Form</h1>
             <form action="./success.html" autocomplete="off" class ='form-survey' id = 'survey-form'>
-                <div id = 'msg-invalid'>All fields are required.</div>
-                <div id = 'success-msg'>Thank you for filling up the form.</div>
+                <!-- <div id = 'msg-invalid'>All fields are required.</div>
+                <div id = 'success-msg'>Thank you for filling up the form.</div> -->
 
                 <section class = 'personal-info'>
                     <div class = 'primary-info'>
@@ -53,7 +57,7 @@
                                 <input type="radio" name = 'sex' value='male' id='sex-male'required>
                                 <label for="sex-male" id = 'male'>Male</label>
                                 <input type="radio" name = 'sex' value='female' id='sex-female'>
-                                <label for="sex-female" id = 'male'>Female</label>
+                                <label for="sex-female" id = 'female'>Female</label>
                             </div>
 
                             <div class = 'birthday'>
@@ -61,8 +65,8 @@
                                 <input type="date" required>
                             </div>
                             
+                            <p>How did you learn about our hotel?</p>
                             <div class='checkboxes'>
-                                <p>How did you learn about our hotel</p>
                                 <input type="checkbox" id = 'socmed' value = 'Social Media'>
                                 <label for="socmed">Social Media</label>
                                 <input type="checkbox" id = 'ads' value = 'Ads'>
@@ -71,6 +75,8 @@
                                 <label for="travelagent">Travel Agent</label>
                                 <input type="checkbox" id = 'friend' value = 'Friend'>
                                 <label for="friend">Friend</label>
+                                <input type="checkbox" id = 'Company' value = 'Company'>
+                                <label for="Company">Company</label>
                             </div>
 
                     </div>
