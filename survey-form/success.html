@@ -13,20 +13,24 @@
 
 
 <body>
-
     <div class = 'parallax'>
         <div id = 'heading'>
-            <h1 id = 'title'> Thank you, <?php echo $_GET['sex']?>.</h1>
+            <h1 id = 'title'> Thank you, </h1>
+            <div id = 'name'> </div>
             <p id = 'description'>
-            Rest assure that we will do everything we can to improve the hotel.
+            We will do everything to serve you better.
             </p>
             <div id = 'link'>
                 <a href="index.html">Go back to Form</a>
             </div>
         </div>
     </div>
-    
 </body>
+
+<script>
+    let urlSearchParams = new URLSearchParams(window.location.search);
+    let params = Object.fromEntries(urlSearchParams.entries());
+</script>
 
 
 </html>

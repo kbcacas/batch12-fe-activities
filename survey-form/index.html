@@ -27,7 +27,7 @@
     <main class = 'container-main'>
         <div id = 'whole-form'>
             <h1 id = 'survey-title'> Guest Satisfaction Form</h1>
-            <form action="success.php" autocomplete="off" class ='form-survey' id = 'survey-form' method = 'GET'>
+            <form action="success.html" autocomplete="off" class ='form-survey' id = 'survey-form' method = 'GET'>
                 <!-- <div id = 'msg-invalid'>All fields are required.</div>
                 <div id = 'success-msg'>Thank you for filling up the form.</div> -->
 
@@ -60,20 +60,20 @@
 
                             <div class = 'birthday'>
                                 <p>Birthday</p>
-                                <input type="date" required>
+                                <input type="date" name = 'birthday' required>
                             </div>
                             
                             <p>How did you learn about our hotel?</p>
                             <div class='checkboxes'>
-                                <input type="checkbox" id = 'socmed' value = 'Social Media'>
+                                <input type="checkbox" id = 'socmed' value = 'Social Media' name = 'Hobbies'>
                                 <label for="socmed">Social Media</label>
-                                <input type="checkbox" id = 'ads' value = 'Ads'>
+                                <input type="checkbox" id = 'ads' value = 'Ads' name = 'Hobbies'>
                                 <label for="ads">Advertisement</label>
-                                <input type="checkbox" id = 'travelagent' value = 'Travel Agent'>
+                                <input type="checkbox" id = 'travelagent' value = 'Travel Agent' name='Hobbies'>
                                 <label for="travelagent">Travel Agent</label>
-                                <input type="checkbox" id = 'friend' value = 'Friend'>
+                                <input type="checkbox" id = 'friend' value = 'Friend' name='Hobbies'>
                                 <label for="friend">Friend</label>
-                                <input type="checkbox" id = 'Company' value = 'Company'>
+                                <input type="checkbox" id = 'Company' value = 'Company' name = 'Hobbies'>
                                 <label for="Company">Company</label>
                             </div>
 
