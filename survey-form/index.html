@@ -12,8 +12,6 @@
 
 </head>
 <body>
-
-    <div>
         <div class = 'parallax'>
             <div id = 'heading'>
                 <h1 id = 'title'> Your feedback matters.</h1>
@@ -25,12 +23,11 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <main class = 'container-main'>
         <div id = 'whole-form'>
             <h1 id = 'survey-title'> Guest Satisfaction Form</h1>
-            <form action="./success.html" autocomplete="off" class ='form-survey' id = 'survey-form'>
+            <form action="success.php" autocomplete="off" class ='form-survey' id = 'survey-form' method = 'GET'>
                 <!-- <div id = 'msg-invalid'>All fields are required.</div>
                 <div id = 'success-msg'>Thank you for filling up the form.</div> -->
 
@@ -232,15 +229,20 @@
 
                     <div class = 'comments'>
                         <h6>Comments/Suggestion</h6>
-                        <div><textarea name="feedback" id="feedback" cols="50" rows="2"></textarea></div>
+                        <textarea name="feedback" id="feedback" cols="50" rows="2"></textarea>
                     </div>
 
                     <div class = 'submit'>
                         <div class = 'submit-effect'>
-                            <input type="submit" name="button" value="SUBMIT" id="submit">
+                            <button type="submit" name="button" value="SUBMIT" id="submit"> SUBMIT</button>
                         </div>
                     </div>
                 </section>
+            </form>
+
+            <form action="success.php" method='GET'>
+                <input type="text">
+                <button type="submit" id="submit">SUBMIT</button>
             </form>
          </div>
     </main>

@@ -20,10 +20,8 @@ background-repeat: no-repeat;
 background-size:cover;
 background-attachment: fixed;
 background-blend-mode: overlay;
-display:flex;
-max-width:100%;
+max-width:1920px;
 height:1000px;
-height: 60em;
 clip-path: ellipse(100% 55% at 48% 44%);
 }
 
@@ -82,7 +80,10 @@ clip-path: ellipse(100% 55% at 48% 44%);
 
 .container-main{
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap:wrap;
+    max-width: 100%;
+    align-content: center;
     padding-top:100px;
 }
 
@@ -90,7 +91,6 @@ clip-path: ellipse(100% 55% at 48% 44%);
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
-    align-content: stretch;
     padding:20px;
     border-radius:20px;
     background-color:#222831;
@@ -137,6 +137,7 @@ padding-bottom: 20px;
 .primary-info label{
     padding-top:8px;
     padding-bottom:8px;
+    font-size:1em;
 }
 
 .secondary-info{
@@ -169,7 +170,6 @@ padding-bottom: 20px;
     flex-direction: column;
     flex-wrap:wrap;
     justify-content: center;
-    
 }
 
 .category{
@@ -183,7 +183,7 @@ padding-bottom: 20px;
     width:50%;
     justify-content: space-around;
     font-family: 'Montserrat';
-    font-size: 1.5vw;
+    font-size: 1.5em;
 }
 
 .item{
@@ -217,7 +217,7 @@ margin-bottom:5px;
     position:relative;
     font-family:'Montserrat';
     font-size:1rem;
-    left:30px;
+    max-width: 100%;
 }
 .submit{
     display: flex;
@@ -279,6 +279,45 @@ input[type = 'submit']{
 input[type = 'submit']:hover{
     background-color: #0a1931d8;
     color:#FFD369;
+}
+
+
+@media only screen and (max-width:320px){
+
+    .parallax{
+        max-width: 100%;
+    }
+
+    #heading{
+        top:20px;
+    }
+
+    #whole-form{
+        display:block;
+    }
+
+    .container-main{
+        display:block;
+    }
+
+    .personal-info{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-info{
+        flex-wrap:nowrap;
+        width:100%;
+    }
+
+    .secondary-info{
+        width:100%;
+    }
+
+    .category h1{
+        justify-content: center;
+    }
 }
 
 
