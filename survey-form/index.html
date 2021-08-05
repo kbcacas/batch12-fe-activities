@@ -27,7 +27,7 @@
     <main class = 'container-main'>
         <div id = 'whole-form'>
             <h1 id = 'survey-title'> Guest Satisfaction Form</h1>
-            <form action="success.html" autocomplete="off" class ='form-survey' id = 'survey-form' method = 'GET'>
+            <form onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="success.html" autocomplete="off" class ='form-survey' id = 'survey-form' method = 'GET'>
                 <!-- <div id = 'msg-invalid'>All fields are required.</div>
                 <div id = 'success-msg'>Thank you for filling up the form.</div> -->
 
@@ -44,9 +44,9 @@
                         <label for="name" autocapitalize="words" id = 'name-label'>Full Name</label>
                         <input type="text" name = 'name' id ='name' placeholder="e.g. Kimcarl Cacas" required>
                         <label for="email" id = 'email-label'>E-mail Address</label>
-                        <input type ='email' id = 'email' email = 'email' placeholder="e.g. kbcacas@gmail.com" required>
+                        <input type ='email' id = 'email' name = 'email' placeholder="e.g. kbcacas@gmail.com" required>
                         <label for="number" id = 'number-label' >Phone Number</label>
-                        <input type="text" number = 'number' id = 'number' placeholder="11-digit phone number" pattern="[0]+\d{10}$" required>
+                        <input type="text" name = 'number' id = 'number' placeholder="11-digit phone number" pattern="[0]+\d{10}$" required>
                     </div>
 
                     <div class= 'secondary-info'>
@@ -65,15 +65,15 @@
                             
                             <p>How did you learn about our hotel?</p>
                             <div class='checkboxes'>
-                                <input type="checkbox" id = 'socmed' value = 'Social Media' name = 'Hobbies'>
+                                <input type="checkbox" id = 'socmed' value = 'Social Media' name = 'Refer'>
                                 <label for="socmed">Social Media</label>
-                                <input type="checkbox" id = 'ads' value = 'Ads' name = 'Hobbies'>
+                                <input type="checkbox" id = 'ads' value = 'Ads' name = 'Refer'>
                                 <label for="ads">Advertisement</label>
-                                <input type="checkbox" id = 'travelagent' value = 'Travel Agent' name='Hobbies'>
+                                <input type="checkbox" id = 'travelagent' value = 'Travel Agent' name='Refer'>
                                 <label for="travelagent">Travel Agent</label>
-                                <input type="checkbox" id = 'friend' value = 'Friend' name='Hobbies'>
+                                <input type="checkbox" id = 'friend' value = 'Friend' name='Refer'>
                                 <label for="friend">Friend</label>
-                                <input type="checkbox" id = 'Company' value = 'Company' name = 'Hobbies'>
+                                <input type="checkbox" id = 'Company' value = 'Company' name = 'Refer'>
                                 <label for="Company">Company</label>
                             </div>
 
