@@ -1,0 +1,78 @@
+<!--
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+.main-container{
+    max-width: 100%;
+    display:block;
+    font-family:'Nunito';
+}
+
+#intro-container{
+    background-color: #DBE2EF;
+    max-width: 100%;
+    padding: 15em;
+    font-size:1.5vw;
+    color:#112D4E;
+
+}
+
+.about-container{
+    background:#112D4E;
+    color:#F9F7F7;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 300px;
+}
+
+#about{
+    margin:50px;
+}
+
+p{
+    padding-bottom: 20px;
+    line-height: 25px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#projects-container{
+    background:#DBE2EF;
+    color: #112D4E;
+    padding:300px 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+
+#contact-container{
+    background:#112D4E;
+    color:#DBE2EF;
+    padding:300px 300px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+-->

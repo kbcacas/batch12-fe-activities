@@ -12,6 +12,7 @@ body,html{
     background-repeat:no-repeat;
     background-attachment: fixed;
     background-size:cover;
+    background-repeat:no-repeat;
 }
 
 .parallax{
@@ -22,7 +23,6 @@ background-attachment: fixed;
 background-blend-mode: overlay;
 max-width:1920px;
 height:1000px;
-clip-path: ellipse(100% 55% at 48% 44%);
 }
 
 #heading{
@@ -266,7 +266,7 @@ input[type='text']:focus{
     outline:none !important;
 }
 
-input[type = 'submit']{
+button[type = 'submit']{
     transition: 0.2s;
     font-size:0.9em;
     padding:3px;
@@ -276,7 +276,7 @@ input[type = 'submit']{
     border-radius: 10px;
 }
 
-input[type = 'submit']:hover{
+button[type = 'submit']:hover{
     background-color: #0a1931d8;
     color:#FFD369;
 }
