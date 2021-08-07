@@ -6,23 +6,36 @@
 
 body,html{
     background:#171010;
+    text-align: center;
 }
-
+h1{
+    font-family: 'montserrat';
+    color:rgb(226, 214, 142);
+    padding-bottom: 20px;
+	margin: auto;
+}
 #board-container{
     max-width: 100%;
     display:block;
-
-
 }
 
 #board{
     display:flex;
     flex-wrap:wrap;
     flex-direction: row;
-    height:600px;
-    width:600px;
+    max-width: 600px;
+	max-height: 600px;
+	width: 100vw;
+	height: 100vw;
     border: 5px solid white;
     box-shadow:5px 5px 20px white;
+
+    position: relative;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
 }
 
 .black{
@@ -55,6 +68,15 @@ body,html{
     font-size:50px;
     justify-content: center;
     align-content: center;
+}
+
+@media screen and (max-width:620px) {
+
+    .top,
+    .bot{
+        font-size:7vw;
+    }
+    
 }
 
 
