@@ -6,15 +6,18 @@
 
 body,html{
     background-color:#bbacac;
+    text-align: center;
     margin:0;
     padding:0;
 }
 
 h1{
     text-align: center;
-    display:block;
+    font-family: helvetica;
     padding-bottom: 20px;
+    margin:auto;
 }
+
 #grid-container{
     display:grid;
     grid-template-columns: repeat(8,1fr);
