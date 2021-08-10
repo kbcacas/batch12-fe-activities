@@ -20,7 +20,6 @@
     padding: 15em;
     font-size:1.5vw;
     color:#112D4E;
-
 }
 
 .about-container{
@@ -45,6 +44,10 @@ p{
 
 ul{
     list-style-type: none;
+}
+
+a:visited{
+    color:#DBE2EF;
 }
 
 #projects-container{
