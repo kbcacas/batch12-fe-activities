@@ -1,52 +1,54 @@
-// window.addEventListener('DOMContentLoaded',setup)
+  
+const header = document.querySelector("header");
+const sectionOne = document.querySelector(".home-intro");
 
-// function setup(){
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
-//     const appearOptions = {
-//         threshold:1,
-//         rootMargin: '0px 0px -200px 0px'
-//     };
-//     const observer = new IntersectionObserver((entries,observer)=>{
-//         entries.forEach(entry=>{
-//             if(entry.isIntersecting){
-//                 entry.target.classList.add('appear');
-//                 observer.unobserve(entry.target);          
-//              } else {
-//                 return;
-//             }
-//         })
-//     },appearOptions);
+const sectionOneOptions = {
+  rootMargin: "0px 0px -200px 0px"
+};
 
-//     const headers = document.querySelectorAll('h1');
-//     headers.forEach(h1=>observer.observe(h1));
-//     const paras = document.querySelectorAll('p');
-//     paras.forEach(p => observer.observe(p));
-//     const links = document.querySelectorAll('a');
-//     links.forEach(a => observer.observe(a));
-//     const media = document.querySelector('div')
-//     media.forEach(div => observer.observe(div));
-// }
+const sectionOneObserver = new IntersectionObserver(function(
+  entries,
+  sectionOneObserver
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      header.classList.add("appear");
+    } else {
+      return;
+    }
+  });
+},
+sectionOneOptions);
 
+sectionOneObserver.observe(sectionOne);
 
-// // const section = document.querySelector('section')
-// // const sectionTwo =  document.querySelector('.about-container');
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -250px 0px"
+};
 
-// // const sectionTwoOptions = {
-// //     rootMargin: "-200px 0px 0px 0px"
-// // };
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("appear");
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+},
+appearOptions);
 
-// // const sectionTwoObserver = new IntersectionObserver(function(
-// //     entries,
-// //     sectionTwoObserver
-// //   ) {
-// //     entries.forEach(entry => {
-// //       if (!entry.isIntersecting) {
-// //         section.classList.add("appear");
-// //       } else {
-// //         section.classList.remove("appear");
-// //       }
-// //     });
-// //   },
-// //   sectionTwoOptions);
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
-// //  sectionTwoObserver.observe(sectionTwo)
+sliders.forEach(slider => {
+  appearOnScroll.observe(slider);
+});

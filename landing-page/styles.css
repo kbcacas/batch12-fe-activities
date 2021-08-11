@@ -61,6 +61,7 @@ header > p{
     color:#191414;
 }
 
+
 .fade-in{
     position:relative;
     opacity:0;
@@ -116,7 +117,6 @@ nav{
 .about-container > h1{
     font-size:2rem;
     color:#EFFFFB;
-
 }
 
 .about-container > p{
@@ -149,6 +149,11 @@ iframe{
     flex-direction: column;
 }
 
+.premium-container > h1{
+    font-size:2.3rem;
+    padding-bottom:20px;
+}
+
 .premium-item{
     display: flex;
     gap: 20px;
@@ -160,20 +165,33 @@ iframe{
     display:flex;
     flex:1;
     flex-direction: column;
-    border:2px solid black;
     align-items:center;
 }
 
 .plans{
     position: relative;
-    background-color: black;
+    padding:150px 300px;
+    background-color:#191414;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family:montserrat;
+}
+
+.plans >h1{
+    font-size:4.5rem;
+    margin:0;
+    color:white;
+}
+
+.plans>p{
+    font-size:2rem;
+    padding:0;
 }
 
 .plans-container{
     flex-direction: row;
+    gap:50px;
     display: flex;
     flex-wrap:wrap;
 }
@@ -182,10 +200,28 @@ iframe{
     display:flex;
     flex-direction: column;
     flex:1;
+    background:black;
 }
+
+.plans-title{
+    background:#1DB954;
+    padding: 0px 10px;
+    margin:0;
+}
+
+.plans-title>h3{
+    font-size:1.5rem;
+    margin-bottom:0;
+}
+
 
 ul{
     list-style-type:none;
+}
+
+li{
+    text-decoration: none;
+    padding:0px 10px 10px 0px;
 }
 
 ul li:before {
