@@ -1,5 +1,5 @@
   
-const header = document.querySelector("header");
+const header = document.querySelector("section");
 const sectionOne = document.querySelector(".home-intro");
 
 const faders = document.querySelectorAll(".fade-in");
