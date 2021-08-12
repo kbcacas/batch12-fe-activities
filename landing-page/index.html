@@ -37,10 +37,10 @@
         </header>
 
         <section class = 'about-container'>
-            <h1 >70 million tracks. 2.9 million podcasts. All for you.</h1>
-            <p >Discover, manage and share over 70 million tracks, including more than 2.9 million podcast titles, for free, or upgrade to Spotify
-                Premium to access exclusive features for music including <span class = 'highlight'>improved sound quality</span> and an on-demand, <span class = 'highlight'>offline</span>, and <span class='highlight'>ad-free listening experience.</span></p>
-            <div class = 'media-container'>
+            <h1 class = 'fade-in'>70 million tracks. 2.9 million podcasts. All for you.</h1>
+            <p class = 'fade-in'>Discover, manage and share over 70 million tracks, including more than 2.9 million podcast titles, for free, or upgrade to Spotify
+                Premium to access exclusive features for music including<span class = 'highlight'> improved sound quality </span>and an on-demand,<span class = 'highlight'> offline </span>, and<span class='highlight'> ad-free listening experience. </span></p>
+            <div class = 'media-container fade-in'>
                 <div class="media">
                     <iframe  width="560" height="315" src="https://www.youtube.com/embed/4-1u3pS4Np4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -51,8 +51,8 @@
         </section>
 
         <section class = 'premium-container'>
-            <h1>Get Premium. Elevate your listening experience.</h1>
-            <div class="premium-item">
+            <h1 class = 'slide-in'>Get Premium. Elevate your listening experience.</h1>
+            <div class="premium-item slide-in ">
                 <div class="premium-list">
                     <img width='100vw' height = '100vh' src="download.png" alt="download">
                     <h3>Download Music</h3>
@@ -136,15 +136,18 @@
         </section>
 
         <section class = 'contact-container'>
-            <h1>Let's get in touch.</h1>
-            <p>Subscribe to our newsletter.</p>
+            <div class="email-container">
+                <h1>Let's get in touch.</h1>
+                <p>Subscribe to our newsletter.</p>
 
-            <form id = 'form' action="index.html" method="get">
-                <input type="email" id = 'email' placeholder = 'Enter your email here' required>
-                <button type="submit" name="button" value="SUBMIT" id="submit">SUBSCRIBE</button>
-            </form>
-
+                <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="index.html" method="get">
+                <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
+                <input type="submit" value="email" id="submit">
+                </form>
+            </div>
         </section>
+
+        <footer></footer>
     </main>
 </body>
 <script src = 'script.js' defer></script>

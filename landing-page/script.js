@@ -1,54 +1,39 @@
-  
-const header = document.querySelector("section");
-const sectionOne = document.querySelector(".home-intro");
-
-const faders = document.querySelectorAll(".fade-in");
-const sliders = document.querySelectorAll(".slide-in");
-
-const sectionOneOptions = {
-  rootMargin: "0px 0px -200px 0px"
-};
-
-const sectionOneObserver = new IntersectionObserver(function(
-  entries,
-  sectionOneObserver
-) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      header.classList.add("appear");
-    } else {
-      return;
-    }
-  });
-},
-sectionOneOptions);
-
-sectionOneObserver.observe(sectionOne);
-
-const appearOptions = {
+const observerOptions = {
+  root: null,
   threshold: 0,
-  rootMargin: "0px 0px -250px 0px"
+  rootMargin: '0px 0px -200px 0px'
 };
 
-const appearOnScroll = new IntersectionObserver(function(
-  entries,
-  appearOnScroll
-) {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      entry.target.classList.add("appear");
-      appearOnScroll.unobserve(entry.target);
-    }
+      if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+      }
   });
-},
-appearOptions);
+}, observerOptions);
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+const observerSlide = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('appear-slide');
+          observerSlide.unobserve(entry.target);
+      }
+  });
+}, observerOptions);
 
-sliders.forEach(slider => {
-  appearOnScroll.observe(slider);
-});
+window.addEventListener('DOMContentLoaded', (event) => { 
+
+  const faders =Array.from(document.getElementsByClassName('fade-in'));
+  for (let fader of faders) {
+    observer.observe(fader);  
+  }
+
+  const sliders =Array.from(document.getElementsByClassName('slide-in'));
+  console.log(sliders);
+  for(let slider of sliders ){
+    observerSlide.observe(slider);
+  }
+
+
+  });
