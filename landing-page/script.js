@@ -40,8 +40,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-right');
 
+
+    let isToggle = false;
+
     burger.addEventListener('click',()=>{
+      const body = document.getElementsByTagName('body');
+      
+      if(isToggle){
+        isToggle=false;
+        body[0].style.overflow='scroll';
+      }else{
+        isToggle=true;
+        body[0].style.overflow='hidden';
+      }
       nav.classList.toggle('nav-active');
+      
     })
   }
 
