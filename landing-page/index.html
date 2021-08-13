@@ -29,6 +29,12 @@
                 <a class = 'nav-link' href="">Signup</a>
                 <a class = 'nav-link' href="">Login</a>
                 </div>
+
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </nav>
 
                 <h1 >Love Language: Sharing Playlists.</h1>
@@ -142,12 +148,36 @@
 
                 <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="index.html" method="get">
                 <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
-                <input type="submit" value="email" id="submit">
+                <input type="submit" value="SUBSCRIBE" id="submit">
                 </form>
             </div>
         </section>
 
-        <footer></footer>
+        <footer class = 'footer-container'>
+            <div class = footer-one>
+                <div class = 'logo-footer'>
+                    <img src="logo.png" alt="logo">
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <a href="">About</a>
+                    <a href="">Jobs</a>
+                </div>
+                <div class='footer-links'>
+                    <h3>Communities</h3>
+                    <a href="">For Artists</a>
+                    <a href="">Developers</a>
+                    <a href="">Investors</a>
+                </div>
+            </div>
+
+            <div class = 'footer-two'>
+                <a href="">Legal</a>
+                <a href="">Privacy Center</a>
+                <a href="">Privacy Policy</a>
+            </div>
+
+        </footer>
     </main>
 </body>
 <script src = 'script.js' defer></script>
