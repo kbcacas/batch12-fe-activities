@@ -37,9 +37,12 @@
                 </div>
             </nav>
 
+            <div class = header-text>
                 <h1 >Love Language: Sharing Playlists.</h1>
                 <p >Stream over 70 million songs with Spotify. </p>
                 <a id='header-link' href=""> GET PREMIUM</a>
+            </div>
+
         </header>
 
         <section class = 'about-container'>
@@ -141,18 +144,6 @@
             </div>
         </section>
 
-        <section class = 'contact-container'>
-            <div class="email-container">
-                <h1>Let's get in touch.</h1>
-                <p>Subscribe to our newsletter.</p>
-
-                <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="index.html" method="get">
-                <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
-                <input type="submit" value="SUBSCRIBE" id="submit">
-                </form>
-            </div>
-        </section>
-
         <footer class = 'footer-container'>
             <div class = footer-one>
                 <div class = 'logo-footer'>
@@ -169,6 +160,16 @@
                     <a href="">Developers</a>
                     <a href="">Investors</a>
                 </div>
+
+                <div class="email-container">
+                    <h1>Let's get in touch.</h1>
+                    <p>Subscribe to our newsletter.</p>
+    
+                    <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="index.html" method="get">
+                    <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
+                    <input type="submit" value="SUBSCRIBE" id="submit">
+                    </form>
+                </div>
             </div>
 
             <div class = 'footer-two'>
@@ -176,7 +177,6 @@
                 <a href="">Privacy Center</a>
                 <a href="">Privacy Policy</a>
             </div>
-
         </footer>
     </main>
 </body>
