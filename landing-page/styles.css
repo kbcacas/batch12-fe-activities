@@ -238,7 +238,7 @@ iframe{
     padding:150px 300px;
     position: relative;
     background-color: #EFFFFB;
-    height:100vh;
+    height:auto;
     font-family:montserrat;
     color:#191414;
     display:flex;
@@ -359,7 +359,7 @@ iframe{
 }
 
 .plans-item:hover{
-    box-shadow: 0px 0px 10px 10px white;
+    box-shadow: 0px 0px 10px 5px white;
     
 }
 
@@ -456,20 +456,42 @@ li{
 
 .footer-one{
     display:flex;
-    flex-direction: row;
-    gap:150px;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+.logo-footer img{
+    width:100%;
+    height:100%;
 }
 
 .footer-links{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     gap:10px;
+}
+.footer-row{
+    display:flex;
+    flex-wrap:wrap;
+    width:80%;
+    padding-top:50px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction: column;
+    text-decoration: none;
+    color:darkgray;
+    transition:0.3s ease-in-out;
+    padding:0px 50px;
+}
+
+.footer-links h3{
+    color:#effffb;
 }
 
 .footer-links a{
     text-decoration: none;
-    color:darkgray;
-    transition:0.3s ease-in-out;
 }
 
 .footer-links a:visited{
@@ -483,7 +505,8 @@ li{
 .email-container{
     display:flex;
     flex-direction:column;
-    align-items: flex-end;
+    align-items:flex-end;
+    flex-basis:50%;
 }
 
 #form{
@@ -524,6 +547,7 @@ li{
 
 .footer-two a{
     text-decoration:none;
+    font-size:0.8rem;
     color:darkgray;
     transition: 0.3s ease-in-out;
 }
@@ -541,7 +565,51 @@ li{
 /* ----- MEDIA QUERIES ----- */
 /* ----- MEDIA QUERIES ----- */
 
-@media screen and (max-width:768px){
+
+@media screen and (max-width:1441px){
+
+    .media-container{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:1025px){
+    .header-text h1{
+        font-size:3rem;
+    }
+
+    .header-text p{
+        font-size:1.5rem;
+    }
+
+    #header-link{
+        font-size:1rem;
+    }
+
+    .about-container{
+        padding:100px 80px;
+    }
+
+    .premium-container{
+        padding: 100px 80px;
+    }
+
+    .plans{
+        padding:20px;
+    }
+
+    .footer-container{
+        padding:20px 0;
+    }
+
+    .footer-two{
+        padding-left:30px;
+    }
+}
+
+
+
+@media screen and (max-width:769px){
     header{
         position:relative;
         overflow-x:hidden;
@@ -648,30 +716,28 @@ li{
     .plans{
         position: relative;
         max-width: 100%;
-        padding:150px 30px;
+        padding:100px 30px;
         background-color:#191414;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family:montserrat;
     }
-    
-    
-    
-    .plans >h1{
-        font-size:4.5rem;
-        margin:0;
-        color:white;
+
+    .plans h1{
+        font-size:3rem;
     }
     
+    
     .plans>p{
-        font-size:2rem;
+        font-size:1.5rem;
         padding:0;
     }
     
     .plans-container{
         max-width:100%;
         flex-direction: column;
+        align-items: center;
         gap:50px;
         display: flex;
         flex-wrap:wrap;
@@ -684,14 +750,13 @@ li{
         max-width: 40%;
         flex-wrap:wrap;
         justify-content: space-between;
-        flex:1;
-        background:black;
-        border-radius:20px;
+        background:#ffffffc0;
+        border-radius:15px;
         transition: 0.2s ease-in;
     }
     
     .plans-item:hover{
-        box-shadow: 0px 0px 10px white;
+        box-shadow: 0px 0px 10px 5px white;
         
     }
     
@@ -700,12 +765,18 @@ li{
         text-align:center;
         padding: 0px 10px;
         margin:0;
-        border-radius:20px;
+        border-radius:15px;
     }
     
     .plans-title>h3{
         font-size:1.5rem;
         margin-bottom:0;
+        color:#effffb;
+    }
+
+    .plans-title p{
+        font-size:1rem;
+        color:black;
     }
     
     ul{
@@ -722,22 +793,63 @@ li{
         color:#1db954;
     }
     .plans-button{
-        border-radius:0px 0px 20px 20px;
-        padding:10px;
-        background:#EFFFFB;
+        padding-bottom:20px;
         display:flex;
         justify-content:center;
-        align-content:center;
     }
     
     .plans-button > a{
-        text-decoration:none;
-        font-weight:bold;
-        font-size:1.2rem;
-        color:black;
-        font-family:nunito;
+        padding:5px 10px;
+    background:black;
+    border-radius:20px;
+    text-decoration:none;
+    text-align: center;
+    font-size:1.2rem;
+    color:#EFFFFB;
+    font-family:nunito;
     }
 
+
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-one{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-row{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email-container{
+        padding-top:40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:426px){
+    .header-text{
+        padding:5px;
+    }
+
+    .header-text p{
+        padding-top:10px;
+        padding-left:10px;
+    }
+
+    .plans-item{
+        max-width: 100%;
+    }
+
+    .footer-links{
+        align-items:center;
+    }
 }
 
 
