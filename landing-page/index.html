@@ -12,7 +12,7 @@
 
 
 
-<title>Spotify</title>
+<title>Spotify Premium</title>
 </head>
 <body>
     
@@ -40,18 +40,21 @@
             <div class = header-text>
                 <h1 >Love Language: Sharing Playlists.</h1>
                 <p >Stream over 70 million songs with Spotify. </p>
-                <a id='header-link' href=""> GET PREMIUM</a>
+                <a id='header-link' href="">Get Premium</a>
             </div>
 
         </header>
 
         <section class = 'about-container'>
+            <div class="svg-container">
+                <img src="wave.svg" alt="">
+            </div>
             <h1 class = 'fade-in'>70 million tracks. 2.9 million podcasts. All for you.</h1>
             <p class = 'fade-in'>Discover, manage and share over 70 million tracks, including more than 2.9 million podcast titles, for free, or upgrade to Spotify
                 Premium to access exclusive features for music including<span class = 'highlight'> improved sound quality </span>and an on-demand,<span class = 'highlight'> offline </span>, and<span class='highlight'> ad-free listening experience. </span></p>
             <div class = 'media-container fade-in'>
                 <div class="media">
-                    <iframe  width="560" height="315" src="https://www.youtube.com/embed/4-1u3pS4Np4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe  id='video' width="560" height="315" src="https://www.youtube.com/embed/4-1u3pS4Np4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="media">
                     <iframe height = '315px' width ='400px 'src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -60,24 +63,27 @@
         </section>
 
         <section class = 'premium-container'>
+            <div class="svg-container">
+                <img src="wave1.svg" alt="">
+            </div>
             <h1 class = 'slide-in'>Get Premium. Elevate your listening experience.</h1>
-            <div class="premium-item slide-in ">
-                <div class="premium-list">
+            <div class="premium-item">
+                <div class="premium-list slide-left">
                     <img width='100vw' height = '100vh' src="download.png" alt="download">
                     <h3>Download Music</h3>
                     <p>Anytime, anywhere.</p>
                 </div>
-                <div class="premium-list">
+                <div class="premium-list slide-left">
                     <img width='100vw' height = '100vh' src="ads.png" alt="ads">
                     <h3>Ad-free</h3>
                     <p>No interruptions. Enjoy non-stop music.</p>
                 </div>
-                <div class="premium-list">
+                <div class="premium-list slide-left">
                     <img width='100vw' height = '100vh' src="play.png" alt="play">
                     <h3>Play anything</h3>
                     <p>Over 70 million tracks and 3 million podcasts available.</p>
                 </div>
-                <div class="premium-list">
+                <div class="premium-list slide-left">
                     <img width='100vw' height = '100vh' src="next.png" alt="next">
                     <h3>Unlimited skips</h3>
                     <p>Just hit next.</p>
@@ -92,7 +98,7 @@
                 <div class="plans-item">
                     <div class="plans-title">
                         <h3>Individual</h3>
-                        <p>₱129/month after offer period.</p>
+                        <p>₱129/month</p>
                     </div>
                     <div class="plans-description">
                         <ul>
@@ -109,7 +115,7 @@
                 <div class="plans-item">
                     <div class="plans-title">
                         <h3>Family</h3>
-                        <p>₱194/month after offer period.</p>
+                        <p>₱194/month</p>
                     </div>
                     <div class="plans-description">
                         <ul>
@@ -126,7 +132,7 @@
                 <div class="plans-item">
                     <div class="plans-title">
                         <h3>Student</h3>
-                        <p>₱65/month after offer period.</p>
+                        <p>₱65/month</p>
                     </div>
                     <div class="plans-description">
                         <ul>
@@ -165,7 +171,7 @@
                     <h1>Let's get in touch.</h1>
                     <p>Subscribe to our newsletter.</p>
     
-                    <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" action="index.html" method="get">
+                    <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" autocomplete= 'off' action="index.html" method="get">
                     <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
                     <input type="submit" value="SUBSCRIBE" id="submit">
                     </form>

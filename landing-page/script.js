@@ -1,7 +1,7 @@
 const observerOptions = {
   root: null,
   threshold: 0,
-  rootMargin: '0px 0px -200px 0px'
+  rootMargin: '0px 0px -325px 0px'
 };
 
 const observer = new IntersectionObserver(entries => {
@@ -30,10 +30,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   const sliders =Array.from(document.getElementsByClassName('slide-in'));
-  console.log(sliders);
   for(let slider of sliders ){
     observerSlide.observe(slider);
   }
+
+  const slidersLeft =Array.from(document.getElementsByClassName('slide-left'));
+  for(let sliderLeft of slidersLeft ){
+    observerSlide.observe(sliderLeft);
+  }
+
+
   });
 
   const navSlide = () =>{
