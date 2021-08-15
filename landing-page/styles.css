@@ -856,6 +856,17 @@ li{
 }
 
 
+@media screen and (max-width:376px){
+    .header-text{
+        position:relative;
+        top:40%;
+    }
+
+    .premium-list{
+        transition-delay: 0s;
+    }
+}
+
 
 
 
