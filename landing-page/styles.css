@@ -79,7 +79,7 @@ header{
     font-weight:bold;
     background:#EFFFFB;
     color:#191414;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in;
 }
 
 #header-link:hover{
@@ -102,14 +102,14 @@ header{
 .slide-in{
     position:relative;
     opacity:0;
-    transform:translatex(100px);
+    transform:translatex(50px);
     transition:all 0.5s ease-in;
 }
 
 .slide-left{
     position:relative;
     opacity:0;
-    transform:translatex(-100px);
+    transform:translatex(-50px);
     transition:all 0.5s ease-in;
 }
 
@@ -120,7 +120,8 @@ header{
 
 
 nav{
-    position:absolute;
+    position:fixed;
+    z-index:1;
     background: black;
     width:100%;
     display:flex;
@@ -140,15 +141,13 @@ nav{
 .nav-link{
     transition:0.4s;
     text-decoration: none;
+    color:white;
 }
 
 .nav-link:visited{
     color:white;
 }
 
-.nav-link:nth-child(3){
-    color:rgb(121, 121, 121);
-}
 
 .nav-link:nth-child(4){
     color:rgb(121, 121, 121);
@@ -179,13 +178,14 @@ nav{
     position:relative;
     display: flex;
     flex-direction: column;
-    padding:200px 250px;
+    padding:150px 250px;
     align-items: center;
     flex-wrap:wrap;
     font-family:Montserrat;
 }
 
 .about-container > h1{
+    padding-top:100px;
     font-size:2rem;
     color:#EFFFFB;
 }
@@ -226,6 +226,7 @@ iframe{
     opacity:0;
     transform: translateY(20px);
     transition:0.5s all ease-in-out;
+    transition-delay:0.3s;
 }
 
 .appear{
@@ -249,6 +250,7 @@ iframe{
     font-size:2.3rem;
     padding-bottom:20px;
     font-weight:bold;
+    transition-delay:0.3s;
 }
 
 .premium-item{
@@ -282,36 +284,32 @@ iframe{
 }
 
 .premium-list:hover{
-    -webkit-animation: bounce 1s infinite;
-    animation: bounce 1s infinite;
-    -webkit-animation-timing-function:bounce ease-in-out;
-    animation-timing-function: ease-in-out;
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 0.5s infinite alternate;
 }
 
 @keyframes bounce {
-    0%{bottom: 0px;}
-    10%,90%{bottom:2.5px;}
-    15%,85%{ bottom:3.5px;}
-    20%,80%{bottom:4.5px;}
-    25%, 75% { bottom:5px; }
-    50%      { bottom:6px; }
-    100%     {bottom:0;}
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
 }
 
-@-webkit-keyframes bounce{
-    0%{bottom: 0px;}
-    10%,90%{bottom:2.5px;}
-    15%,85%{ bottom:3.5px;}
-    20%,80%{bottom:4.5px;}
-    25%, 75% { bottom:5px; }
-    50%      { bottom:6px; }
-    100%     {bottom:0;}
+@-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
 }
 
 .plans{
     position: relative;
     max-width: 100%;
-    padding:100px 300px;
+    padding:50px 300px;
     background-color:#191414;
     display: flex;
     flex-direction: column;
@@ -319,9 +317,8 @@ iframe{
     font-family:montserrat;
 }
 
-
-
 .plans >h1{
+    padding-top:50px;
     font-size:4.5rem;
     margin:0;
     background-image:linear-gradient(to top, #1db954,white);
@@ -340,7 +337,7 @@ iframe{
 .plans-container{
     max-width:100%;
     flex-direction: row;
-    gap:50px;
+    gap:30px;
     display: flex;
     flex-wrap:wrap;
 }
@@ -403,6 +400,7 @@ li{
 
 
 .plans-button{
+    
     padding-bottom:20px;
    display:flex;
    justify-content: center;
@@ -417,6 +415,11 @@ li{
     font-size:1.2rem;
     color:#EFFFFB;
     font-family:nunito;
+    transition:0.2s ease-in-out;
+}
+
+.plans-button > a:hover{
+    transform:scale(1.05);
 }
 
 

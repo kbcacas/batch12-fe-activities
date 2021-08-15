@@ -1,7 +1,7 @@
 const observerOptions = {
   root: null,
   threshold: 0,
-  rootMargin: '0px 0px -325px 0px'
+  rootMargin: '0px 0px -300px 0px'
 };
 
 const observer = new IntersectionObserver(entries => {
@@ -63,5 +63,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
       
     })
   }
-
   navSlide();
+
+
+  function closeNav(){
+    const nav = document.querySelector('.nav-right');
+    nav.classList.remove('nav-active');
+
+    
+  }
