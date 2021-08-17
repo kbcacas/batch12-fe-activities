@@ -175,7 +175,7 @@
                         <p>Subscribe to our newsletter.</p>
         
                         <form id = 'form' onsubmit="window.location=document.getElementById('addressfield').nodeValue; return false" autocomplete= 'off' action="index.html" method="get">
-                        <input type="email" id = 'email' name='email' placeholder = 'Enter your email here' required>
+                        <input type="email" id = 'email' pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" name='email' placeholder = 'Enter your email here' required>
                         <input type="submit" value="Subscribe" id="submit">
                         </form>
                     </div>
