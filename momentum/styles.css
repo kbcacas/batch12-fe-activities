@@ -1,0 +1,319 @@
+<!--
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:poppins;
+}
+
+body{
+    background:url('assets/bg.jpg'),rgba(0, 0, 0, 0.329);
+    background-blend-mode: overlay;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    width:100vh;
+    height:100vh;
+    color:#ffffff;
+}
+
+nav{
+    width:100%;
+    position:absolute;
+    padding:10px 50px;
+    display:flex;
+    overflow-x: hidden;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+
+.refresh, .refresh h3{
+    cursor:pointer;
+    transition:0.1s all ease-in;
+}
+
+.refresh h3:hover{
+    transform:scale(1.1);
+}
+
+
+.todo-toggle h3{
+    text-align:right;
+    transition: all 0.1s ease-in;
+    cursor:pointer;
+}
+
+.todo-toggle h3:hover{
+    transform:scale(1.1);
+    color:ligthgray;
+}
+
+.todo-container{
+    background-color:rgb(0, 0, 0,0.150);
+    opacity:0;
+    width:0;
+    transition: all 0.6s ease-in;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x:hidden;
+    transform:translatex(200%);
+    border-radius:10px;
+}
+
+#close-btn{
+    cursor:pointer;
+}
+#close-btn:hover{
+    transform:scale(1.1);
+}
+
+.todo-container div{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+
+.todo-container form{
+    display:flex;
+    flex-wrap:nowrap;
+    margin-bottom:20px;
+    justify-content: center;
+}
+
+form input{
+    display:block;
+    width:100%;
+}
+
+.todo-list-container{
+    max-height: 30vh;
+    width:100%;
+    overflow:auto;
+    overflow-x:hidden;
+}
+
+
+ul{
+    width:100%;
+    overflow-x: hidden;
+}
+ul::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+    background-color: rgb(255, 255, 255); /* or add it to the track */
+    border-radius:20px;
+}
+
+ul::-webkit-scrollbar-thumb{
+    border-radius:20px;
+    width: 5px;
+    height: 3px;
+    background-color: rgb(3, 3, 3); /* or add it to the track */
+}
+
+.todo-input{
+    outline:none;
+    color:white;
+    background-color:rgba(0, 0, 0, 0.450);
+    border:none;
+    border-top-left-radius:5px;
+    border-bottom-left-radius: 5px;
+    padding:0px 10px;
+}
+
+.todo-input::placeholder{
+    color:white;
+}
+
+.todo-button{
+    transition:all 0.5s ease-in;
+    padding:5px;
+    background-color:rgb(86, 177, 86);
+    border:none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor:pointer;
+}
+
+.todo{
+    transition:all 0.5s ease-in;
+    padding:5px;
+    margin-top:10px;
+    display:flex;
+    flex-wrap:nowrap;
+    width:100%;
+    flex: 1;
+}
+
+.todo li{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    border-bottom:1px solid black;
+    margin-right:5px;
+}
+
+.completed-btn{
+    background-color:orange;
+    border:none;
+    outline:none;
+    padding:3px;
+    cursor:pointer;
+    content: icon;
+}
+
+.del-btn{
+    background-color:rgb(199, 68, 68);
+    border:none;
+    outline:none;
+    padding:3px;
+    cursor:pointer;
+}
+
+.container{
+    position:relative;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.header{
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    overflow-x:hidden;
+}
+
+.time{
+    font-size:5rem;
+    padding:0;
+    margin:0;
+}
+
+.inputName{
+    transition: all 0.5s ease-in;
+}
+
+.greetings{
+    opacity:0;
+    height:10vh;
+    display:flex;
+    justify-content: center;
+    margin:0 !important;
+    transition:all 1s ease-in;
+    transition-delay: 0.5s;
+    font-size:2.5rem;
+    transform:translatey(10px)
+}
+
+.hide{
+    opacity:0;
+    transform:translatex(300%);
+}
+
+.show{
+    opacity:1 !important;
+    transform:none;
+}
+
+.show-greeting{
+    width:30vw;
+    opacity:1;
+    transform:none;
+    z-index:1;
+}
+
+.quote{
+    max-width:100%;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.done{
+    text-decoration: line-through;
+    color:lightgray;
+}
+
+.fa completed-btn{
+    pointer-events: none;
+}
+
+#userName{
+    text-align:center;
+    font-size:2rem;
+    border:none;
+    border-bottom:1px solid white;
+    outline:none;
+    background-color:transparent;
+    color:white;
+}
+
+#focusName{
+    text-align:center;
+    font-size:2rem;
+    border:none;
+    border-bottom:1px solid white;
+    outline:none;
+    background-color:transparent;
+    color:white;
+    transition: all 0.5s ease-in;
+}
+
+.focusName{
+    font-size:1.5rem;
+    transition:all 0.5s ease-in;
+    opacity:0;
+    transform:translatey(10px);
+}
+
+footer{
+    margin-top:100px;
+    color:rgb(212, 212, 212);
+    font-size:1.2rem;
+    padding:0px 300px;
+}
+
+footer q{
+    font-style:italic;
+    transition:1s all ease-in;
+    opacity:0;
+    transform:scale(0);
+}
+
+footer q:focus{
+    border:none;
+    border-bottom:1px solid white;
+    outline:none;
+}
+
+
+.quote-option-generate{
+    cursor:pointer;
+    font-size:1rem;
+}
+
+.container-name div{
+    margin-top:20px;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+
+
+
+-->
+

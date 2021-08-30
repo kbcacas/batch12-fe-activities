@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Momentum App by Kimcarl Cacas</title>
+</head>
+<body>
+        <nav>
+            <div class="nav-links">
+                <div class="refresh">
+                    <h3>Refresh</h3>
+                </div>
+                <div class="todo-toggle">
+                    <h3 class ='show-todo'>To-Do</h3>
+                </div>  
+            </div>
+            
+            <div class="todo-container">
+                <div>
+                    <h3>To-Do</h3>
+                    <i style="font-size:24px" class="fa" id = 'close-btn'>&#xf00d;</i>
+                </div>
+                <form>
+                    <input maxlength='30' type="text" class="todo-input" value ='' placeholder="Place todo here...">
+                    <button class="todo-button" type = 'submit'>
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </form>
+
+                <div class="todo-list-container">
+                    <ul class="todo-list">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="container">
+            <div class="header">
+                <div class="time"></div>
+                <div class="container-name">
+                    <div class="inputName">
+                          <h1>What is your name</h1>
+                            <input autocomplete="off" type="text" id="userName" onkeypress="greetings(event)" >
+                    </div>
+                    
+                    <div class="greetings">
+                    </div>
+                    
+                      <div class="container-focus">
+                          <h1>What is your main focus for today</h1>
+                            <input autocomplete="off" type="text" id="focusName" onkeypress="displayFocus(event)">
+                          <div class="focusName">
+
+                          </div>
+                      </div>
+                </div>
+
+                <footer class="container-quotes">
+                    <q class = 'quote' contenteditable="true" spellcheck="false" onkeypress="editQuote(this)"></q>
+                    <div class="quotes-option-container">
+                      <div class="quotes-option-flex">
+                        <p class="quote-option-generate">Generate Quote</p>
+                      </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+    <script type="text/javascript" src = 'app.js' defer></script>
+</body>
+</html>
