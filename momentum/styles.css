@@ -197,6 +197,7 @@ ul::-webkit-scrollbar-thumb{
     font-size:5rem;
     padding:0;
     margin:0;
+    font-weight:bold;
 }
 
 .inputName{

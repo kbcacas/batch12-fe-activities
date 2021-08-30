@@ -43,32 +43,7 @@ function addList(){
     }
 
     loadTodoList(list)
-    for(let i=0;i<list.todo.length;i++){
-      const todoDiv = document.createElement('div')
-      todoDiv.classList.add('todo')
-      const newTodo=document.createElement('li')
-      newTodo.innerHTML += list.todo[i].text;
-      todoDiv.classList.add('todo-item')
-      todoDiv.append(newTodo)
-      //btn for done
-      const completedButton=document.createElement('button')
-      completedButton.innerHTML+='<i style="font-size:1rem" class="fa done-btn">&#xf00c;</i>'
-      completedButton.classList.add('completed-btn')
-      todoDiv.append(completedButton)
-      //btn for delete
-      const trashButton=document.createElement('button')
-      trashButton.innerHTML+='<i style="font-size:1rem" class="fa">&#xf014;</i>'
-      trashButton.classList.add('del-btn')
-      todoDiv.append(trashButton)
-      //append to list
-      const todoList = document.querySelector('.todo-list')
-      todoList.append(todoDiv)
-
-      if(list.todo[i].status ==='done'){
-        const todoItem=document.querySelectorAll('.todo-item')
-        todoItem[i].classList.add('done')
-      }
-    }
+    
   }
   }
 addList()
