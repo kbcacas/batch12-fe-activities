@@ -73,7 +73,10 @@ function addList(){
   }
 addList()
 
+
 function loadTodoList (list) {
+  const todoList = document.querySelector('.todo-list')
+  todoList.innerHTML=""
   for(let i=0;i<list.todo.length;i++){
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo')
@@ -92,7 +95,6 @@ function loadTodoList (list) {
     trashButton.classList.add('del-btn')
     todoDiv.append(trashButton)
     //append to list
-    const todoList = document.querySelector('.todo-list')
     todoList.append(todoDiv)
 
     if(list.todo[i].status ==='done'){
@@ -100,6 +102,7 @@ function loadTodoList (list) {
       todoItem[i].classList.add('done')
     }
   }
+
 }
 
 // FUNCTION FOR GREETINGS
@@ -202,17 +205,18 @@ function addTodo(event){
   todoDiv.append(trashButton)
   //append to list
   todoList.append(todoDiv)
-  const checkButtons=document.querySelectorAll('.completed-btn')
-  checkButtons[checkButtons.length-1].addEventListener('click',function(){
-    // const todoList=document.querySelectorAll('li')
-    // todoList[checkButtons.length-1].classList.toggle('done')
-    selectedItem(checkButtons.length-1)
-  })
+  newItemListeners()
+  // const checkButtons=document.querySelectorAll('.completed-btn')
+  // checkButtons[checkButtons.length-1].addEventListener('click',function(){
+  //   // const todoList=document.querySelectorAll('li')
+  //   // todoList[checkButtons.length-1].classList.toggle('done')
+  //   selectedItem(checkButtons.length-1)
+  // })
 
-  const deleteButtons=document.querySelectorAll('.del-btn')
-  deleteButtons[deleteButtons.length-1].addEventListener('click',function(){
-    deleteItem(deleteButtons.length-1)
-  })
+  // const deleteButtons=document.querySelectorAll('.del-btn')
+  // deleteButtons[deleteButtons.length-1].addEventListener('click',function(){
+  //   deleteItem(deleteButtons.length-1)
+  // })
 
   if(localStorage.hasOwnProperty('data')){
     let storageData=JSON.parse(localStorage.getItem('data'))
@@ -234,7 +238,7 @@ function addTodo(event){
 
 
 
-let selectedItem = (i) => {
+function selectedItem(i){
   console.log(i)
   const todoItem=document.querySelectorAll('.todo-item')
   todoItem[i].classList.toggle('done')
@@ -249,25 +253,25 @@ let selectedItem = (i) => {
   }
 }
 
-todoListListener()
-function todoListListener(){
-  const doneButton=document.querySelectorAll('.completed-btn')
-  const trashButton=document.querySelectorAll('.del-btn')
-  const todoItem=document.querySelectorAll('.todo-item')
-  let keys = JSON.parse(localStorage.getItem('data'))
-  let selectedIndex;
-  todoItem.forEach((value,index)=>{
-    doneButton[index].addEventListener('click',function(){
-      selectedItem(index)
-    })
-    // trashButton[index= index > 1 ? index:0].addEventListener('click',function(){
-    //   deleteItem(index)
-    //   console.log(index > 1 ? index:0)
-    // })
-  })
-}
+// todoListListener()
+// function todoListListener(){
+//   const doneButton=document.querySelectorAll('.completed-btn')
+//   const trashButton=document.querySelectorAll('.del-btn')
+//   const todoItem=document.querySelectorAll('.todo-item')
+//   let keys = JSON.parse(localStorage.getItem('data'))
+//   let selectedIndex;
+//   todoItem.forEach((value,index)=>{
+//     doneButton[index].addEventListener('click',function(){
+//       selectedItem(index)
+//     })
+//     // trashButton[index= index > 1 ? index:0].addEventListener('click',function(){
+//     //   deleteItem(index)
+//     //   console.log(index > 1 ? index:0)
+//     // })
+//   })
+// }
 
-let deleteItem = (i)=>{
+function deleteItem(i){
   let keys = JSON.parse(localStorage.getItem('data'))
   const todoList = document.querySelector('.todo-list')
   // console.log(i)
@@ -278,9 +282,9 @@ let deleteItem = (i)=>{
       keys.todo.splice(i,1)
     // console.log(keys.todo)
     localStorage.setItem('data',JSON.stringify(keys))
-    todoList.innerHTML = ''
     loadTodoList(keys)
-    deleteEventListener(keys,deleteItem)
+    addAllEventListeners()
+    // deleteEventListener(keys,deleteItem)
     },500)
     // tempFuc(todoItem)
   }
@@ -289,40 +293,73 @@ let deleteItem = (i)=>{
   // console.log(todoItem.length)
 }
 
-
-function deleteEventListener(keys,deleteItem){
-  const trashButton=document.querySelectorAll('.del-btn')
-  keys.todo.forEach((value,index)=>{
-    //   doneButton[index].addEventListener('click',function(){
-    //     selectedItem(index)
-    //   })
-      trashButton[index].addEventListener('click',function(){
-        console.log(index)
-        deleteItem(index)
-        // deleteListener()
-      })
+addAllEventListeners()
+function addAllEventListeners(){
+  let storage = JSON.parse(localStorage.getItem('data'))
+  const allCheckButtons=document.querySelectorAll('.completed-btn')
+  const allDelButtons=document.querySelectorAll('.del-btn')
+  storage.todo.forEach((value,index)=>{
+    allCheckButtons[index].addEventListener('click',function(){
+      selectedItem(index)
     })
+
+    allDelButtons[index].addEventListener('click',function(){
+      deleteItem(index)
+    })
+  })
 }
 
+function newItemListeners(){
+  console.log('1')
+  let storage = JSON.parse(localStorage.getItem('data'))
+  const allCheckButtons=document.querySelectorAll('.completed-btn')
+  const allDelButtons=document.querySelectorAll('.del-btn')
+  // storage.todo.forEach((value,index)=>{
+    allCheckButtons[allCheckButtons.length-1].addEventListener('click',function(){
+      selectedItem(allCheckButtons.length-1)
+    })
 
-function deleteListener(){
-  const doneButton=document.querySelectorAll('.completed-btn')
-  let keys = JSON.parse(localStorage.getItem('data'))
-  const todoItem = document.querySelectorAll('.todo-item')
-  let selectedIndex;
-  deleteEventListener(keys,deleteItem)
-  // keys.todo.forEach((value,index)=>{
-  // //   doneButton[index].addEventListener('click',function(){
-  // //     selectedItem(index)
-  // //   })
-  //   trashButton[index].addEventListener('click',function(){
-  //     console.log(index)
-  //     deleteItem(index)
-  //     // deleteListener()
-  //   })
+    allDelButtons[allDelButtons.length-1].addEventListener('click',function(){
+      deleteItem(allDelButtons.length-1)
+    })
   // })
-  // tempFuc(todoItem)
+
 }
+
+
+// function deleteEventListener(keys,deleteItem){
+//   const trashButton=document.querySelectorAll('.del-btn')
+//   keys.todo.forEach((value,index)=>{
+//     //   doneButton[index].addEventListener('click',function(){
+//     //     selectedItem(index)
+//     //   })
+//       trashButton[index].addEventListener('click',function(){
+//         console.log(index)
+//         deleteItem(index)
+//         // deleteListener()
+//       })
+//     })
+// }
+
+
+// function deleteListener(){
+//   const doneButton=document.querySelectorAll('.completed-btn')
+//   let keys = JSON.parse(localStorage.getItem('data'))
+//   const todoItem = document.querySelectorAll('.todo-item')
+//   let selectedIndex;
+//   deleteEventListener(keys,deleteItem)
+//   // keys.todo.forEach((value,index)=>{
+//   // //   doneButton[index].addEventListener('click',function(){
+//   // //     selectedItem(index)
+//   // //   })
+//   //   trashButton[index].addEventListener('click',function(){
+//   //     console.log(index)
+//   //     deleteItem(index)
+//   //     // deleteListener()
+//   //   })
+//   // })
+//   // tempFuc(todoItem)
+// }
 
 // function tempFuc (elem) {
 //   const trashButton=document.querySelectorAll('.del-btn')
@@ -333,7 +370,7 @@ function deleteListener(){
 //     })
 //   })
 // }
-deleteListener()
+// deleteListener()
 
 // deleteListListener()
 
