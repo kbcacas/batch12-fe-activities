@@ -12,7 +12,7 @@ body{
     background-repeat:no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    width:100vh;
+    width:100vw;
     height:100vh;
     color:#ffffff;
 }
@@ -21,8 +21,8 @@ nav{
     width:100%;
     position:absolute;
     padding:10px 50px;
-    display:flex;
     overflow-x: hidden;
+    display:flex;
 }
 
 .nav-links{
@@ -178,10 +178,12 @@ ul::-webkit-scrollbar-thumb{
 
 .container{
     position:relative;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
+    top:10vh;
+display:flex;
+width:100vw;
+text-align:center;
+flex-direction: column;
+overflow-x:hidden;
 }
 
 .header{
@@ -206,7 +208,7 @@ ul::-webkit-scrollbar-thumb{
 
 .greetings{
     opacity:0;
-    height:10vh;
+    height:20vh;
     display:flex;
     justify-content: center;
     margin:0 !important;
@@ -304,13 +306,59 @@ footer q:focus{
     font-size:1rem;
 }
 
-.container-name div{
-    margin-top:20px;
-}
 
 .hidden {
     display: none;
     opacity: 0;
+}
+
+/* media queries */
+
+@media screen and (max-width:1025px){
+
+    footer{
+        margin:0;
+        padding:0 100px;
+    }
+    .focusName{
+        height:15vh;
+    }
+}
+
+@media screen and (max-width:769px){
+    
+    .show-greeting{
+        width:50vw;
+        z-index:1;
+    }
+
+    .todo-container{
+        background-color:rgb(69,69,69);
+    }
+}
+
+@media screen and (max-width:426px){
+    .show-greeting{
+        width:100vw;
+        z-index:1;
+    }
+
+    footer{
+        margin:0;
+        padding:0 20px;
+    }
+}
+
+@media screen and (max-width:376px){
+    .greetings{
+        font-size:1.5rem;
+        height:10vh;
+    }
+
+    footer{
+        margin:0;
+        padding:0 20px;
+    }
 }
 
 
