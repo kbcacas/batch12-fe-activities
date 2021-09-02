@@ -3,17 +3,17 @@ const getTime = () => {
     const dateTime = new Date()
     return (dateTime.getHours()<10?'0':'') + dateTime.getHours() + ":" + (dateTime.getMinutes()<10?'0':'') + dateTime.getMinutes()
   }
-const setTime = document.querySelector(".time")
-let time = getTime()
-const appendTime = document.createElement("h1")
-setTime.append(appendTime)
-appendTime.innerHTML = time
-const updateTime = () => {
-  let getCurrentTime = setTime.getElementsByTagName("h1")
-  let currentTime = getCurrentTime[0].textContent
-  if(currentTime !== getTime()){
-    getCurrentTime[0].textContent = getTime()
-  }
+    const setTime = document.querySelector(".time")
+    let time = getTime()
+    const appendTime = document.createElement("h1")
+    setTime.append(appendTime)
+    appendTime.innerHTML = time
+    const updateTime = () => {
+      let getCurrentTime = setTime.getElementsByTagName("h1")
+      let currentTime = getCurrentTime[0].textContent
+      if(currentTime !== getTime()){
+        getCurrentTime[0].textContent = getTime()
+      }
 }
 updateTime();
 setInterval(updateTime, 1000);
@@ -45,7 +45,7 @@ function addList(){
     loadTodoList(list)
     
   }
-  }
+}
 addList()
 
 
@@ -144,7 +144,7 @@ async function updateQuote() {
       quote.textContent = "An error occured";
       console.log(data);
     }
-  }
+}
   updateQuote();
 
 // EVENT LISTENER FOR GENERATING NEW QUOTE
@@ -181,17 +181,7 @@ function addTodo(event){
   //append to list
   todoList.append(todoDiv)
   newItemListeners()
-  // const checkButtons=document.querySelectorAll('.completed-btn')
-  // checkButtons[checkButtons.length-1].addEventListener('click',function(){
-  //   // const todoList=document.querySelectorAll('li')
-  //   // todoList[checkButtons.length-1].classList.toggle('done')
-  //   selectedItem(checkButtons.length-1)
-  // })
 
-  // const deleteButtons=document.querySelectorAll('.del-btn')
-  // deleteButtons[deleteButtons.length-1].addEventListener('click',function(){
-  //   deleteItem(deleteButtons.length-1)
-  // })
 
   if(localStorage.hasOwnProperty('data')){
     let storageData=JSON.parse(localStorage.getItem('data'))
@@ -228,44 +218,20 @@ function selectedItem(i){
   }
 }
 
-// todoListListener()
-// function todoListListener(){
-//   const doneButton=document.querySelectorAll('.completed-btn')
-//   const trashButton=document.querySelectorAll('.del-btn')
-//   const todoItem=document.querySelectorAll('.todo-item')
-//   let keys = JSON.parse(localStorage.getItem('data'))
-//   let selectedIndex;
-//   todoItem.forEach((value,index)=>{
-//     doneButton[index].addEventListener('click',function(){
-//       selectedItem(index)
-//     })
-//     // trashButton[index= index > 1 ? index:0].addEventListener('click',function(){
-//     //   deleteItem(index)
-//     //   console.log(index > 1 ? index:0)
-//     // })
-//   })
-// }
+
 
 function deleteItem(i){
   let keys = JSON.parse(localStorage.getItem('data'))
   const todoList = document.querySelector('.todo-list')
-  // console.log(i)
-  // todoItem[i].classList.add('hide')
   if(localStorage.hasOwnProperty('data')){
-    // console.log(i)
     setTimeout(function(){
       keys.todo.splice(i,1)
-    // console.log(keys.todo)
     localStorage.setItem('data',JSON.stringify(keys))
     loadTodoList(keys)
     addAllEventListeners()
-    // deleteEventListener(keys,deleteItem)
     },500)
-    // tempFuc(todoItem)
   }
-  // todoItem[i].remove()
-  // deleteListener()
-  // console.log(todoItem.length)
+
 }
 
 addAllEventListeners()
@@ -301,81 +267,6 @@ function newItemListeners(){
 
 }
 
-
-// function deleteEventListener(keys,deleteItem){
-//   const trashButton=document.querySelectorAll('.del-btn')
-//   keys.todo.forEach((value,index)=>{
-//     //   doneButton[index].addEventListener('click',function(){
-//     //     selectedItem(index)
-//     //   })
-//       trashButton[index].addEventListener('click',function(){
-//         console.log(index)
-//         deleteItem(index)
-//         // deleteListener()
-//       })
-//     })
-// }
-
-
-// function deleteListener(){
-//   const doneButton=document.querySelectorAll('.completed-btn')
-//   let keys = JSON.parse(localStorage.getItem('data'))
-//   const todoItem = document.querySelectorAll('.todo-item')
-//   let selectedIndex;
-//   deleteEventListener(keys,deleteItem)
-//   // keys.todo.forEach((value,index)=>{
-//   // //   doneButton[index].addEventListener('click',function(){
-//   // //     selectedItem(index)
-//   // //   })
-//   //   trashButton[index].addEventListener('click',function(){
-//   //     console.log(index)
-//   //     deleteItem(index)
-//   //     // deleteListener()
-//   //   })
-//   // })
-//   // tempFuc(todoItem)
-// }
-
-// function tempFuc (elem) {
-//   const trashButton=document.querySelectorAll('.del-btn')
-//   elem.forEach((value,index)=>{
-//     trashButton[index].addEventListener('click',function(){
-//       console.log(elem.length)
-//       deleteItem(index)
-//     })
-//   })
-// }
-// deleteListener()
-
-// deleteListListener()
-
-// function deleteListListener(){
-//   const doneButton=document.querySelectorAll('.completed-btn')
-//   const trashButton=document.querySelectorAll('.del-btn')
-//   const todoItem=document.querySelectorAll('.todo-item')
-
-//   let selectedIndex;
-//   // todoItem.forEach((value,index)=>{
-//   //   doneButton[index].addEventListener('click',function(){
-//   //     selectedItem(index)
-//   //   })
-//   //   // trashButton[index].addEventListener('click',function(){
-//   //   //   deleteItem(index)
-//   //   // })
-//   // })
-
-//   todoItem.forEach((value,index)=>{
-//     trashButton[index].addEventListener('click',function(){
-//       // selectedItem(index)
-//       console.log(index)
-//     })
-//     console.log(trashButton[index])
-
-//     // trashButton[index].addEventListener('click',function(){
-//     //   deleteItem(index)
-//     // })
-//   })
-// }
 
 
 // TOGGLE TO-DO CONTAINER
