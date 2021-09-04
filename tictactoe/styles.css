@@ -1,0 +1,71 @@
+<!--
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body{
+    font-family: 'Rubik';
+    background-color:#2C394B;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items:center;
+    align-items: center;
+    align-content: center;
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+    font-weight:700;
+}
+
+.turn{
+    display:flex;
+    font-size:2rem;
+    justify-content: space-evenly;
+    border-radius:10px;
+    padding:10px 20px;
+}
+
+.turn div{
+    margin:0px 10px;
+    color:black;
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.player-one{
+    background:#FF4C29;
+
+}
+
+.board{
+    width: 400px;
+    height: 400px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cell{
+    background:#082032;
+
+    border-radius:10px;
+    margin:3px;
+}
+
+
+
+
+
+
+
+
+
+-->
