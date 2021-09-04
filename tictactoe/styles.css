@@ -36,13 +36,15 @@ h1{
 
 .turn div{
     margin:0px 10px;
+    font-weight:500;
     color:black;
     padding:5px 10px;
     border-radius:10px;
+    transition:0.2s all ease-in;
 }
 
-.player-one{
-    background:#FF4C29;
+.turn-display{
+    background-color:#FF4C29 !important;
 
 }
 
@@ -50,14 +52,21 @@ h1{
     width: 400px;
     height: 400px;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .cell{
     background:#082032;
-
+    color:#110e0e;
     border-radius:10px;
     margin:3px;
+    font-size:7rem;
+    color:white;
+    display:grid;
+    place-items: center;
+    min-height:0;
+    min-width:0;
 }
 
 
