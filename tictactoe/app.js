@@ -20,13 +20,13 @@ const oDisplay = document.querySelector('.player-o')
 
 
 // ------- FUNCTIONS ---------
-currentPlayerTurn()
+displayPlayerTurn()
 
 
 
 
-// displays current player's turn
-function currentPlayerTurn(){
+// display player turn
+function displayPlayerTurn(){
     if(!currentPlayer){
         currentPlayer = 'o'
         xDisplay.classList.remove('turn-display')
@@ -38,7 +38,21 @@ function currentPlayerTurn(){
     }
 }
 
-//
+// change turn
+function changeTurn(){
+    currentPlayer = currentPlayer === "x" ? "o" : "x";
+    statusDisplay.innerHTML = currentPlayerTurn();
+}
+
+
+// places the X/O move in the array; displays the move
+function processPlayedCell(clickedCell,getIndex){
+    state[getIndex[0]][getIndex[1]] = currentPlayer
+    clickedCell.innerHTML = currentPlayer
+}
+
+
+// on cell click
 function onCellClick(event){
     ctr++
     let entry = JSON.parse(JSON.stringify(state))
