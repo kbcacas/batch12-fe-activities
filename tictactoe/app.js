@@ -106,6 +106,7 @@ function validateResult(){
       previous.style.visibility = "visible"
       next.style.visibility = "visible"
       turnDiv.classList.add('hide')
+      updateDraw()
       return;
     } else {
       occupiedCells = 0;
@@ -230,6 +231,11 @@ function updateScoreboard(){
     oWinCounter++
     oWin.textContent = `O-WINS: ${oWinCounter}`
   }
+}
+
+function updateDraw(){
+  draw++
+  draws.textContent = `DRAWS: ${draw}`
 }
 
 
