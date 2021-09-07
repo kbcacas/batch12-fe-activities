@@ -9,11 +9,14 @@ const cells = document.querySelectorAll('.cell')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
 const restart = document.querySelector('.restart')
+const result = document.querySelector('.result')
+const resultText = document.querySelector('.result-text')
 
 let occupiedCells = 0
 let inGame = true
 let currentPlayer = 'x'
 let moveHistory = []
+const turnDiv = document.querySelector('.turn')
 const xDisplay = document.querySelector('.player-x')
 xDisplay.classList.add('turn-display')
 const oDisplay = document.querySelector('.player-o')
@@ -77,23 +80,25 @@ function validateResult(){
       currentMove = moveHistory.length;
       let entry = JSON.parse(JSON.stringify(state));
       moveHistory.push(entry);
-        inGame = false;
-        alert(`${currentPlayer} wins`)
-        previous.style.visibility = "visible"
-        next.style.visibility = "visible"
-        console.log(moveHistory)
-        return;
+      inGame = false;
+      resultText.innerHTML = `${currentPlayer} wins!`
+      result.classList.add('show')
+      turnDiv.classList.add('hide')
+      previous.style.visibility = "visible"
+      next.style.visibility = "visible"
+      return;
     }
 
     if (occupiedCells === 9) {
       let entry = JSON.parse(JSON.stringify(state));
       moveHistory.push(entry);
       currentMove = moveHistory.length - 1;
+      inGame = false;
+      resultText.innerHTML = `It is a draw.`
+      result.classList.add('show')
       previous.style.visibility = "visible"
       next.style.visibility = "visible"
-      inGame = false;
-      console.log('draw!')
-      console.log(moveHistory)
+      turnDiv.classList.add('hide')
       return;
     } else {
       occupiedCells = 0;
@@ -133,7 +138,6 @@ function onCellClick(event){
 // function for restart button
 function onRestart(event){
   inGame = true
-  currentPlayer = "x"
   state = state = [
     ["", "", ""],
     ["", "", ""],
@@ -142,15 +146,18 @@ function onRestart(event){
   moveHistory = []
   previous.style.visibility = "hidden"
   next.style.visibility = "hidden"
+  turnDiv.classList.remove('hide')
   changeTurn()
-  cells.forEach(cell => cell.innerHTML = "")
+  cells.forEach(cell => {
+    cell.innerHTML = ""
+    cell.style.cursor = 'pointer'
+  })
 }
 
 //function for previous button
 function previousButton(e){
   e.preventDefault()
   currentMove--;
-  console.log(moves[currentMove]);
   if (currentMove <= 0) {
     currentMove = 0;
   }
@@ -161,23 +168,22 @@ function previousButton(e){
 function nextButton(e) {
   e.preventDefault()
   currentMove++;
-  console.log(moves[currentMove]);
-  if (currentMove >= moves.length - 1) {
-    currentMove = moves.length - 1;
+  if (currentMove >= moveHistory.length - 1) {
+    currentMove = moveHistory.length - 1;
   }
-  checkHistory(moves[currentMove]);
+  checkHistory(moveHistory[currentMove]);
 }
 
-//function for checking history
+// function for checking history
 function checkHistory(arr) {
   for (let i=0; i<3; i++) {
       for (let j=0; j<3; j++) {
           if (i === 0) {
-              if (arr[i][j] === "X") {
-                  cells[i+j].innerHTML = "X"; 
+              if (arr[i][j] === "x") {
+                  cells[i+j].innerHTML = "x"; 
               }
-              else if (arr[i][j] === "O") {
-                  cells[i+j].innerHTML = "O";
+              else if (arr[i][j] === "o") {
+                  cells[i+j].innerHTML = "o";
               }
               else {
                   cells[i+j].innerHTML = "";   
@@ -185,11 +191,11 @@ function checkHistory(arr) {
           }
 
           else if (i === 1) {
-              if (arr[i][j] === "X") {
-                  cells[i+j+2].innerHTML = "X"; 
+              if (arr[i][j] === "x") {
+                  cells[i+j+2].innerHTML = "x"; 
               }
-              else if (arr[i][j] === "O") {
-                  cells[i+j+2].innerHTML = "O";
+              else if (arr[i][j] === "o") {
+                  cells[i+j+2].innerHTML = "o";
               }
               else {
                   cells[i+j+2].innerHTML = "";   
@@ -197,11 +203,11 @@ function checkHistory(arr) {
           }
 
           else {
-              if (arr[i][j] === "X") {
-                  cells[i+j+4].innerHTML = "X"; 
+              if (arr[i][j] === "x") {
+                  cells[i+j+4].innerHTML = "x"; 
               }
-              else if (arr[i][j] === "O") {
-                  cells[i+j+4].innerHTML = "O";
+              else if (arr[i][j] === "o") {
+                  cells[i+j+4].innerHTML = "o";
               }
               else {
                   cells[i+j+4].innerHTML = "";   
@@ -212,11 +218,24 @@ function checkHistory(arr) {
 }
 
 
+
 // ------ ADDING EVENT LISTENERS ------
 
 // on each cell
 cells.forEach(cell => {
     cell.addEventListener('click', onCellClick)
+    cell.addEventListener('mouseover',function(){
+      if(cell.innerHTML!== ''){
+        cell.style.cursor='not-allowed'
+      }
+    })
 })
 // on restart button
 restart.addEventListener('click', onRestart)
+// to stop displaying result
+result.addEventListener('transitionend',function(){
+  setTimeout(function(){
+    result.classList.remove('show')
+    resultText.innerHTML = ""
+  },2500)
+})
