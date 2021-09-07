@@ -11,7 +11,13 @@ const next = document.querySelector('.next')
 const restart = document.querySelector('.restart')
 const result = document.querySelector('.result')
 const resultText = document.querySelector('.result-text')
+const xWin = document.querySelector('.x-win')
+const oWin = document.querySelector('.o-win')
+const draws = document.querySelector('.draw')
 
+let xWinCounter = 0
+let oWinCounter = 0
+let draw = 0
 let occupiedCells = 0
 let inGame = true
 let currentPlayer = 'x'
@@ -86,6 +92,7 @@ function validateResult(){
       turnDiv.classList.add('hide')
       previous.style.visibility = "visible"
       next.style.visibility = "visible"
+      updateScoreboard()
       return;
     }
 
@@ -112,12 +119,10 @@ function changeTurn(){
       xDisplay.classList.remove('turn-display')
       oDisplay.classList.add('turn-display')
       currentPlayer = 'o'
-      console.log(currentPlayer)
   }else{
       oDisplay.classList.remove('turn-display')
       xDisplay.classList.add('turn-display')
       currentPlayer = 'x'
-      console.log(currentPlayer)
   }
 }
 
@@ -214,6 +219,16 @@ function checkHistory(arr) {
               }
           }
       }
+  }
+}
+
+function updateScoreboard(){
+  if(currentPlayer === 'x'){
+    xWinCounter++
+    xWin.textContent = `X-WINS: ${xWinCounter}`
+  }else{
+    oWinCounter++
+    oWin.textContent = `O-WINS: ${oWinCounter}`
   }
 }
 
