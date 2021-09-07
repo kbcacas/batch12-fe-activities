@@ -126,7 +126,6 @@ function onCellClick(event){
     if(state[getIndex[0]][getIndex[1]] !== '' || !inGame){
         return
     }
-
     processPlayedCell(clickedCell,getIndex)
     validateResult()
 }
@@ -147,6 +146,7 @@ function onRestart(event){
   cells.forEach(cell => cell.innerHTML = "")
 }
 
+//function for previous button
 function previousButton(e){
   e.preventDefault()
   currentMove--;
@@ -158,12 +158,11 @@ function previousButton(e){
 }
 
 
+// ------ ADDING EVENT LISTENERS ------
 
-
-// add event listeners on each cell
+// on each cell
 cells.forEach(cell => {
     cell.addEventListener('click', onCellClick)
 })
-
-// add event listener on restart button
+// on restart button
 restart.addEventListener('click', onRestart)
