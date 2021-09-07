@@ -19,8 +19,13 @@
     </video>
     <h1 class = 'title'>TIC-TAC-TOE</h1>
     <div class="turn">
-        <div class="player-x">X's turn</div>
-        <div class="player-o">O's turn</div>
+        <div class="player-x">X's TURN</div>
+        <div class="player-o">O's TURN</div>
+    </div>
+    <div class="scoreboard-container">
+        <div class="x-win">X-WINS: </div>
+        <div class="o-win">O-WINS: </div>
+        <div class="draw">DRAWS: </div>
     </div>
     <div class="board">
         <div class="cell" data-cell="0-0"></div>
@@ -34,9 +39,9 @@
         <div class="cell" data-cell="2-2"></div>
     </div>
     <div class="buttons">
-        <button class="previous" onclick="previousButton(event)">Previous</button>
+        <button class="previous" onclick="previousButton(event)"><<</button>
         <button class="restart">New Game</button>
-        <button class="next" onclick="nextButton(event)">Next</button>
+        <button class="next" onclick="nextButton(event)">>></button>
     </div>
     <div class="result"><h1 class = 'result-text'></h1></div>
 
