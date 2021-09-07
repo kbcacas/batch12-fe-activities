@@ -15,30 +15,11 @@ let inGame = true
 let currentPlayer = 'x'
 let moveHistory = []
 const xDisplay = document.querySelector('.player-x')
+xDisplay.classList.add('turn-display')
 const oDisplay = document.querySelector('.player-o')
 
 
 // ------- FUNCTIONS ---------
-
-
-
-
-// change turn
-function changeTurn(){
-    xDisplay.classList.add('turn-display')
-    if(currentPlayer=== 'x'){
-        currentPlayer = 'o'
-        xDisplay.classList.remove('turn-display')
-        oDisplay.classList.add('turn-display')
-        console.log(currentPlayer)
-    }else{
-        currentPlayer = 'x'
-        oDisplay.classList.remove('turn-display')
-        xDisplay.classList.add('turn-display')
-        console.log(currentPlayer)
-    }
-}
-
 
 // places the X/O move in the array; displays the move
 function processPlayedCell(clickedCell,getIndex){
@@ -54,6 +35,7 @@ function validateResult(){
       let b = state[row][1];
       let c = state[row][2];
       if (a != "" && a===b && b===c) {
+        
         roundWon = true;
           break
       }
@@ -77,7 +59,6 @@ function validateResult(){
     }
   }
 
-
   let a = state[0][0];
   let b = state[1][1];
   let c = state[2][2];
@@ -92,10 +73,6 @@ function validateResult(){
             }
           }
 
-
-
-
-    console.log(occupiedCells)
     if (roundWon) {
       currentMove = moveHistory.length;
       let entry = JSON.parse(JSON.stringify(state));
@@ -108,7 +85,6 @@ function validateResult(){
         return;
     }
 
-    console.log(occupiedCells)
     if (occupiedCells === 9) {
       let entry = JSON.parse(JSON.stringify(state));
       moveHistory.push(entry);
@@ -122,9 +98,22 @@ function validateResult(){
     } else {
       occupiedCells = 0;
     }
-
-    
   changeTurn();
+}
+
+// change turn
+function changeTurn(){
+  if(currentPlayer=== 'x'){
+      xDisplay.classList.remove('turn-display')
+      oDisplay.classList.add('turn-display')
+      currentPlayer = 'o'
+      console.log(currentPlayer)
+  }else{
+      oDisplay.classList.remove('turn-display')
+      xDisplay.classList.add('turn-display')
+      currentPlayer = 'x'
+      console.log(currentPlayer)
+  }
 }
 
 // on cell click
@@ -142,14 +131,29 @@ function onCellClick(event){
     validateResult()
 }
 
+// function for restart button
+function onRestart(event){
+  inGame = true
+  currentPlayer = "x"
+  state = state = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ]
+  moveHistory = []
+  previous.style.visibility = "hidden"
+  next.style.visibility = "hidden"
+  changeTurn()
+  cells.forEach(cell => cell.innerHTML = "")
+}
+
+
+
+
 // add event listeners on each cell
 cells.forEach(cell => {
     cell.addEventListener('click', onCellClick)
-    cell.addEventListener('mouseover', function(event){
-        event.target.classList.add('turn-display')
-    })
-    cell.addEventListener('mouseout',function(event){
-        let hovered = event.target
-        event.target.classList.remove('turn-display')
-    })
 })
+
+// add event listener on restart button
+restart.addEventListener('click', onRestart)
