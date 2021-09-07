@@ -43,6 +43,9 @@ h1{
     transition:0.2s all ease-in;
 }
 
+.turn-display{
+    background:#FF4C29;
+}
 
 .board{
     width: 400px;
@@ -69,6 +72,9 @@ h1{
     background-color:#FF4C29 !important;
 }
 
+.previous, .next{
+    visibility: hidden;
+}
 
 
 
