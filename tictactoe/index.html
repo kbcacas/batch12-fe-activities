@@ -8,9 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
     <title>Tic - Tac - Toe</title>
 </head>
 <body>
+    <video playsinline autoplay muted loop poster="bgvid.jpg" id="bgvid">
+        <source src="bgvid.mp4" type="video/mp4">
+    </video>
     <h1 class = 'title'>TIC-TAC-TOE</h1>
     <div class="turn">
         <div class="player-x">X's turn</div>
@@ -32,6 +38,7 @@
         <button class="restart">New Game</button>
         <button class="next" onclick="nextButton(event)">Next</button>
     </div>
+    <div class="result"><h1 class = 'result-text'></h1></div>
 
     <script src = './app.js' defer></script>
 </body>
