@@ -147,6 +147,16 @@ function onRestart(event){
   cells.forEach(cell => cell.innerHTML = "")
 }
 
+function previousButton(e){
+  e.preventDefault()
+  currentMove--;
+  console.log(moves[currentMove]);
+  if (currentMove <= 0) {
+    currentMove = 0;
+  }
+  checkHistory(moveHistory[currentMove]);
+}
+
 
 
 
