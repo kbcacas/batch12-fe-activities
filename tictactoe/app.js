@@ -157,6 +157,60 @@ function previousButton(e){
   checkHistory(moveHistory[currentMove]);
 }
 
+//function for next button
+function nextButton(e) {
+  e.preventDefault()
+  currentMove++;
+  console.log(moves[currentMove]);
+  if (currentMove >= moves.length - 1) {
+    currentMove = moves.length - 1;
+  }
+  checkHistory(moves[currentMove]);
+}
+
+//function for checking history
+function checkHistory(arr) {
+  for (let i=0; i<3; i++) {
+      for (let j=0; j<3; j++) {
+          if (i === 0) {
+              if (arr[i][j] === "X") {
+                  cells[i+j].innerHTML = "X"; 
+              }
+              else if (arr[i][j] === "O") {
+                  cells[i+j].innerHTML = "O";
+              }
+              else {
+                  cells[i+j].innerHTML = "";   
+              }
+          }
+
+          else if (i === 1) {
+              if (arr[i][j] === "X") {
+                  cells[i+j+2].innerHTML = "X"; 
+              }
+              else if (arr[i][j] === "O") {
+                  cells[i+j+2].innerHTML = "O";
+              }
+              else {
+                  cells[i+j+2].innerHTML = "";   
+              }
+          }
+
+          else {
+              if (arr[i][j] === "X") {
+                  cells[i+j+4].innerHTML = "X"; 
+              }
+              else if (arr[i][j] === "O") {
+                  cells[i+j+4].innerHTML = "O";
+              }
+              else {
+                  cells[i+j+4].innerHTML = "";   
+              }
+          }
+      }
+  }
+}
+
 
 // ------ ADDING EVENT LISTENERS ------
 
