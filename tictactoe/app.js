@@ -10,38 +10,33 @@ const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
 const restart = document.querySelector('.restart')
 
-let remainingCells = 0
+let occupiedCells = 0
 let inGame = true
 let currentPlayer = 'x'
 let moveHistory = []
-let ctr = 0
 const xDisplay = document.querySelector('.player-x')
 const oDisplay = document.querySelector('.player-o')
 
 
 // ------- FUNCTIONS ---------
-displayPlayerTurn()
 
 
 
 
-// display player turn
-function displayPlayerTurn(){
-    if(!currentPlayer){
+// change turn
+function changeTurn(){
+    xDisplay.classList.add('turn-display')
+    if(currentPlayer=== 'x'){
         currentPlayer = 'o'
         xDisplay.classList.remove('turn-display')
         oDisplay.classList.add('turn-display')
+        console.log(currentPlayer)
     }else{
         currentPlayer = 'x'
         oDisplay.classList.remove('turn-display')
         xDisplay.classList.add('turn-display')
+        console.log(currentPlayer)
     }
-}
-
-// change turn
-function changeTurn(){
-    currentPlayer = currentPlayer === "x" ? "o" : "x";
-    statusDisplay.innerHTML = currentPlayerTurn();
 }
 
 
@@ -51,10 +46,89 @@ function processPlayedCell(clickedCell,getIndex){
     clickedCell.innerHTML = currentPlayer
 }
 
+// validate the result of the turn
+function validateResult(){
+    let roundWon = false;
+    for (let row=0; row<state.length; row++) {
+      let a = state[row][0];
+      let b = state[row][1];
+      let c = state[row][2];
+      if (a != "" && a===b && b===c) {
+        roundWon = true;
+          break
+      }
+  }
+
+  for (let column=0; column<state.length; column++) {
+    let a = state[0][column];
+    let b = state[1][column];
+    let c = state[2][column];
+    if (a != "" && a===b && b===c) {
+      roundWon = true;
+        break
+    }
+  }
+
+  for (let row=0; row<state.length; row++) {
+  for (let column=0; column<state.length; column++) {
+      if(state[row][column] !== "") {
+          occupiedCells += 1
+      }
+    }
+  }
+
+
+  let a = state[0][0];
+  let b = state[1][1];
+  let c = state[2][2];
+  if(a != "" && a===b && b===c) {
+    roundWon = true;
+  } else {
+    let a = state[0][2];
+    let b = state[1][1];
+    let c = state[2][0];
+    if(a != "" && a===b && b===c) {
+              roundWon = true
+            }
+          }
+
+
+
+
+    console.log(occupiedCells)
+    if (roundWon) {
+      currentMove = moveHistory.length;
+      let entry = JSON.parse(JSON.stringify(state));
+      moveHistory.push(entry);
+        inGame = false;
+        alert(`${currentPlayer} wins`)
+        previous.style.visibility = "visible"
+        next.style.visibility = "visible"
+        console.log(moveHistory)
+        return;
+    }
+
+    console.log(occupiedCells)
+    if (occupiedCells === 9) {
+      let entry = JSON.parse(JSON.stringify(state));
+      moveHistory.push(entry);
+      currentMove = moveHistory.length - 1;
+      previous.style.visibility = "visible"
+      next.style.visibility = "visible"
+      inGame = false;
+      console.log('draw!')
+      console.log(moveHistory)
+      return;
+    } else {
+      occupiedCells = 0;
+    }
+
+    
+  changeTurn();
+}
 
 // on cell click
 function onCellClick(event){
-    ctr++
     let entry = JSON.parse(JSON.stringify(state))
     moveHistory.push(entry)
     const clickedCell = event.target
@@ -67,10 +141,6 @@ function onCellClick(event){
     processPlayedCell(clickedCell,getIndex)
     validateResult()
 }
-
-function previewTurn(){
-}
-
 
 // add event listeners on each cell
 cells.forEach(cell => {
