@@ -158,6 +158,44 @@ button:hover{
 }
 
 
+/* MEDIA QUERIES */
+@media screen and (max-width: 710px){
+    .title{
+        font-size:4rem;
+    }
+
+    button{
+        font-size:1rem;
+    }
+}
+@media screen and (max-width: 482px){
+    .title{
+        font-size:3rem;
+    }
+    .turn{
+        font-size:1.5rem;
+    }
+    button{
+        font-size:1rem;
+    }
+}
+
+@media screen and (max-width: 374px){
+    .title{
+        font-size:3rem;
+    }
+    .turn{
+        font-size:1rem;
+    }
+    .board{
+        width:350px;
+        height:350px;
+    }
+    button{
+        font-size:1rem;
+    }
+}
+
 
 
 
