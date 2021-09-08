@@ -15,6 +15,7 @@ const xWin = document.querySelector('.x-win')
 const oWin = document.querySelector('.o-win')
 const draws = document.querySelector('.draw')
 
+let winningIndex = []
 let xWinCounter = 0
 let oWinCounter = 0
 let draw = 0
@@ -43,18 +44,56 @@ function validateResult(){
       let a = state[row][0];
       let b = state[row][1];
       let c = state[row][2];
-      if (a != "" && a===b && b===c) {
-        
+      if (a != "" && a===b && b===c){
+        if(row === 0){
+          for(let i = 0; i<3; i++){
+            cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+            winningIndex.push(i)
+          }
+        }
+        if(row === 1){
+          for(let i = 3; i<6; i++){
+            cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+            winningIndex.push(i)
+          }
+        }
+        if(row === 2){
+          for(let i = 6; i<9; i++){
+            cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+            winningIndex.push(i)
+          }
+        }
         roundWon = true;
-          break
+        break
       }
-  }
+    }
 
   for (let column=0; column<state.length; column++) {
     let a = state[0][column];
     let b = state[1][column];
     let c = state[2][column];
     if (a != "" && a===b && b===c) {
+      if(column === 0){
+          for(let i = 0; i<cells.length;i++){
+            if(i === 0 || i === 3 || i ===6){
+              cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+            }
+          }
+      }
+      if(column === 1){
+        for(let i = 0; i<cells.length;i++){
+          if(i === 1 || i === 4 || i === 7){
+            cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+          }
+        }
+      }
+      if(column === 2){
+        for(let i = 0; i<cells.length;i++){
+          if(i === 2 || i === 5 || i === 8){
+            cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+          }
+        }
+      }
       roundWon = true;
         break
     }
@@ -72,15 +111,25 @@ function validateResult(){
   let b = state[1][1];
   let c = state[2][2];
   if(a != "" && a===b && b===c) {
+    for(let i = 0; i<cells.length;i++){
+      if(i === 0 || i === 4 || i === 8){
+        cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+      }
+    }
     roundWon = true;
   } else {
     let a = state[0][2];
     let b = state[1][1];
     let c = state[2][0];
     if(a != "" && a===b && b===c) {
-              roundWon = true
-            }
-          }
+      for(let i = 0; i<cells.length;i++){
+        if(i === 2 || i === 4 || i === 6){
+          cells[i].style.animation = 'scale 1s ease-in infinite alternate'
+        }
+      }  
+      roundWon = true
+    }
+  }
 
     if (roundWon) {
       currentMove = moveHistory.length;
@@ -157,12 +206,16 @@ function onRestart(event){
   cells.forEach(cell => {
     cell.innerHTML = ""
     cell.style.cursor = 'pointer'
+    cell.style.animation = 'none'
   })
 }
 
 //function for previous button
 function previousButton(e){
   e.preventDefault()
+  cells.forEach(cell => {
+    cell.style.animation = 'none'
+  })
   currentMove--;
   if (currentMove <= 0) {
     currentMove = 0;
