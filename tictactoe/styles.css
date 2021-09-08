@@ -34,7 +34,7 @@ h1{
     text-align: center;
     font-weight:bold;
     font-family: Goldman;
-    color:#bb9e9e;
+    color:#FFEFCF;
     animation: bounce 2.5s ease-in infinite alternate;
 }
 
@@ -43,7 +43,7 @@ h1{
       transform: translateY(0px);
     }
     to {
-      transform: translateY(-15px);
+      transform: translateY(15px);
     }
 }
 
@@ -65,7 +65,7 @@ h1{
 }
 
 .turn-display{
-    background:#9528c7;
+    background:#B42B51;
     opacity:0.8;
 }
 
@@ -78,7 +78,7 @@ h1{
 }
 
 .cell{
-    background:#70332be1;
+    background:#420516d3;
     color:#110e0e;
     border-radius:10px;
     margin:5px;
@@ -90,10 +90,11 @@ h1{
     min-width:0;
     cursor:pointer;
     box-shadow: 0 0 5px white;
+    transition:all 150ms ease-in;
 }
 
 .cell:hover {
-    background-color:#9528c7 !important;
+    background-color:#B42B51 !important;
 }
 
 .previous, .next{
@@ -131,17 +132,20 @@ h1{
 button{
     border:none;
     font-family: Goldman;
-    background-color:rgb(68, 63, 63);
+    background-color:lightgray;
+    color:black;
     outline:none;
-    font-size:2rem;
+    font-size:1.5rem;
     margin:10px;
     padding:10px 20px;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 50ms ease-in;
 }
 
 button:hover{
-    background-color:lightgray;
+    background-color:#662d3d;
+    color:white;
 }
 
 .scoreboard-container{
